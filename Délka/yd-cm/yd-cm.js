@@ -26,7 +26,7 @@ window.onload = function () {
       alert("Nezadali jste číslo!");
     } else {
       vysledek = naparsovano / 91.44;
-      alert(naparsovano + " cm je je " + vysledek + " yd");
+      alert(naparsovano + " cm je " + vysledek + " yd");
     }
     inputcm = document.getElementById("cm");
     naparsovano = null;
