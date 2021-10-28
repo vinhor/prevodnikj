@@ -14,9 +14,9 @@ window.onload = function () {
     } else {
       vysledek = naparsovano * 2.54;
       alert(naparsovano + " in je " + vysledek + " cm");
-      inputin = document.getElementById("in");
-      naparsovano = null;
     }
+    inputin = document.getElementById("in");
+    naparsovano = null;
   }
   function cmToIn() {
     inputcm = inputcm.value.trim();
@@ -27,8 +27,9 @@ window.onload = function () {
     else {
         vysledek = naparsovano / 2.54;
         alert(naparsovano + " cm je " + vysledek + " in")
-        inputcm = document.getElementById("cm")
     }
+    inputcm = document.getElementById("cm")
+    naparsovano = null;
   }
   bin.onclick = inToCm;
   bcm.onclick = cmToIn;
