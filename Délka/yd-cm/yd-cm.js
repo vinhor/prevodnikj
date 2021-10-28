@@ -12,7 +12,7 @@ window.onload = function () {
     if (isNaN(naparsovano) || naparsovano == null) {
       alert("Nezadali jste číslo!");
     } else {
-      vysledek = naparsovano * 0.91;
+      vysledek = naparsovano * 0.9144;
       alert(naparsovano + " yd je " + vysledek + " m");
     }
     inputyd = document.getElementById("yd");
@@ -25,7 +25,7 @@ window.onload = function () {
     if (isNaN(naparsovano) || naparsovano == null) {
       alert("Nezadali jste číslo!");
     } else {
-      vysledek = naparsovano / 0.91;
+      vysledek = naparsovano / 0.9144;
       alert(naparsovano + " m je " + vysledek + " yd");
     }
     inputcm = document.getElementById("cm");
