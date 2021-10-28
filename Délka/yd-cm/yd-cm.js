@@ -12,8 +12,8 @@ window.onload = function () {
     if (isNaN(naparsovano) || naparsovano == null) {
       alert("Nezadali jste číslo!");
     } else {
-      vysledek = naparsovano * 91.44;
-      alert(naparsovano + " yd je " + vysledek + " cm");
+      vysledek = naparsovano * 0.91;
+      alert(naparsovano + " yd je " + vysledek + " m");
     }
     inputyd = document.getElementById("yd");
     naparsovano = null;
@@ -25,8 +25,8 @@ window.onload = function () {
     if (isNaN(naparsovano) || naparsovano == null) {
       alert("Nezadali jste číslo!");
     } else {
-      vysledek = naparsovano / 91.44;
-      alert(naparsovano + " cm je " + vysledek + " yd");
+      vysledek = naparsovano / 0.91;
+      alert(naparsovano + " m je " + vysledek + " yd");
     }
     inputcm = document.getElementById("cm");
     naparsovano = null;
