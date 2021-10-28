@@ -22,13 +22,12 @@ window.onload = function () {
     inputcm = inputcm.value.trim();
     naparsovano = parseFloat(inputcm);
     if (isNaN(naparsovano) || naparsovano == null) {
-      alert("Nezadali jste číslo!")
+      alert("Nezadali jste číslo!");
+    } else {
+      vysledek = naparsovano / 2.54;
+      alert(naparsovano + " cm je " + vysledek + " in");
     }
-    else {
-        vysledek = naparsovano / 2.54;
-        alert(naparsovano + " cm je " + vysledek + " in")
-    }
-    inputcm = document.getElementById("cm")
+    inputcm = document.getElementById("cm");
     naparsovano = null;
   }
   bin.onclick = inToCm;
