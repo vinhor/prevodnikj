@@ -18,6 +18,7 @@ window.onload = function () {
     inputyd = document.getElementById("yd");
     naparsovano = null;
   }
+
   function cmToYd() {
     inputcm = inputcm.value.trim();
     naparsovano = parseFloat(inputcm);
