@@ -19,16 +19,17 @@ window.onload = function () {
     naparsovano = null;
   }
   function kmToMi() {
-      inputkm = inputkm.value.trim();
-      naparsovano = parseFloat(inputkm);
-      if (isNaN(naparsovano) || naparsovano == null) {
-          alert("Nezadali jste číslo!");
-      }
-      else {
-          vysledek = naparsovano / 1.6093;
-          alert(naparsovano + " km je " + vysledek + " mi");
-      }
-      inputkm = document.getElementById("km")
-      naparsovano = null;
+    inputkm = inputkm.value.trim();
+    naparsovano = parseFloat(inputkm);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      alert("Nezadali jste číslo!");
+    } else {
+      vysledek = naparsovano / 1.6093;
+      alert(naparsovano + " km je " + vysledek + " mi");
+    }
+    inputkm = document.getElementById("km");
+    naparsovano = null;
   }
+  bmi.onclick = miToKm;
+  bkm.onclick = kmToMi;
 };
