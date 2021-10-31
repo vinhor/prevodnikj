@@ -31,4 +31,6 @@ window.onload = function () {
     inputkm = document.getElementById("km");
     naparsovano = null;
   }
+  bau.onclick = auToKm;
+  bkm.onclick = kmToAu;
 };
