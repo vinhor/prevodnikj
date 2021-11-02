@@ -88,6 +88,10 @@ a img {
     padding: 0.5rem;
 }
 
+article h1 {
+    font-size: 2rem;
+}
+
 .chyba {
     font-size: 5rem;
     color: rgb(201, 51, 51);
