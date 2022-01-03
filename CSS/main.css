@@ -29,6 +29,13 @@ article {
   padding: 1rem;
 }
 
+button:hover,
+button:active {
+  border-color: #0f98ba;
+  cursor: pointer;
+  color: #0f98ba;
+}
+
 button {
   background: inherit;
   min-width: 6rem;
