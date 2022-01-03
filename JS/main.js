@@ -5,9 +5,6 @@ window.onload = function () {
   let btnDelka = document.getElementById("btnDelka");
   let btnHmotnost = document.getElementById("btnHmotnost");
   let btnObjem = document.getElementById("btnObjem");
-  slctDelka.style.display = "none";
-  slctHmotnost.style.display = "none";
-  slctObjem.style.display = "none";
 
   btnDelka.onclick = function () {
     slctDelka.style.display = "inline";
