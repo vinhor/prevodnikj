@@ -56,9 +56,16 @@
 
 /* Speciální */
 
-button:hover,
-button:active {
+button.neaktivni:hover,
+button.neaktivni:active {
   border-color: #0f98ba;
   cursor: pointer;
   color: #0f98ba;
+}
+
+button.aktivni {
+  border-color: rgba(149, 153, 158, 0.35);
+  color: rgba(149, 153, 158, 0.35);
+  background-color: #0b0e31;
+  cursor: not-allowed;
 }
