@@ -1,0 +1,27 @@
+/* Klasické */
+
+.velky-ramecek {
+  border: 2px solid rgb(149, 153, 158);
+}
+
+.chyba {
+  font-size: 5rem;
+  color: rgb(201, 51, 51);
+}
+
+.cervena {
+  color: rgb(201, 51, 51);
+}
+
+.velka {
+  font-size: 2rem;
+}
+
+/* Speciální */
+
+button:hover,
+button:active {
+  border-color: #0f98ba;
+  cursor: pointer;
+  color: #0f98ba;
+}

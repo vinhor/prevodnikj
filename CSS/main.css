@@ -88,33 +88,7 @@ a:active img {
   border: 1px solid #0f98ba;
 }
 
-button:hover,
-button:active {
-  border-color: #0f98ba;
-  cursor: pointer;
-  color: #0f98ba;
-}
-
 a:hover,
 a:active {
   color: #0f98ba;
-}
-
-/* Třídy */
-
-.velky-ramecek {
-  border: 2px solid rgb(149, 153, 158);
-}
-
-.chyba {
-  font-size: 5rem;
-  color: rgb(201, 51, 51);
-}
-
-.cervena {
-  color: rgb(201, 51, 51);
-}
-
-.velka {
-  font-size: 2rem;
 }
