@@ -31,12 +31,13 @@ article {
 
 button {
   background: inherit;
+  min-width: 6rem;
   color: inherit;
   border: 1px solid rgb(149, 153, 158);
   font-size: inherit;
   font-family: inherit;
   border-radius: 2rem;
-  margin: 1rem;
+  margin: 1rem auto;
   padding: 0.5rem;
 }
 
