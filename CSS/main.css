@@ -1,6 +1,7 @@
 /* Hlavní */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
 body {
   background: #0b0e31;
   font-family: "Poppins", Ubuntu, Roboto, sans-serif;
@@ -41,7 +42,7 @@ button {
   min-width: 6rem;
   color: inherit;
   border: 1px solid rgb(149, 153, 158);
-  font-size: inherit;
+  font-size: 1.25rem;
   font-family: inherit;
   border-radius: 2rem;
   margin: 1rem auto;
@@ -79,6 +80,22 @@ article h1 {
 
 strong h2 {
   font-weight: bold;
+}
+
+select {
+  border: 1px solid rgb(149, 153, 158);
+  color: rgb(149, 153, 158);
+  background: inherit;
+  font-size: 1.25rem;
+  font-weight: normal;
+  font-family: inherit;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+}
+
+option {
+  color: #0b0e31;
 }
 
 /* Speciální */
