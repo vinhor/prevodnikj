@@ -1,3 +1,5 @@
+/* Hlavní */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 body {
   background: #0b0e31;
@@ -38,18 +40,6 @@ button {
   padding: 0.5rem;
 }
 
-button:hover,
-button:active {
-  border-color: #0f98ba;
-  cursor: pointer;
-  color: #0f98ba;
-}
-
-a:hover,
-a:active {
-  color: #0f98ba;
-}
-
 a {
   color: rgb(149, 153, 158);
 }
@@ -68,19 +58,6 @@ input {
   max-width: 6rem;
 }
 
-input:focus {
-  border: 1px solid rgb(149, 153, 158);
-  border-radius: 2rem;
-  margin: 1rem;
-  padding: 0.2rem 1rem;
-  text-align: center;
-}
-
-a:hover img,
-a:active img {
-  border: 1px solid #0f98ba;
-}
-
 a img {
   border: 1px solid rgb(149, 153, 158);
   border-radius: 2rem;
@@ -96,8 +73,37 @@ strong h2 {
   font-weight: bold;
 }
 
+/* Speciální */
+
+input:focus {
+  border: 1px solid rgb(149, 153, 158);
+  border-radius: 2rem;
+  margin: 1rem;
+  padding: 0.2rem 1rem;
+  text-align: center;
+}
+
+a:hover img,
+a:active img {
+  border: 1px solid #0f98ba;
+}
+
+button:hover,
+button:active {
+  border-color: #0f98ba;
+  cursor: pointer;
+  color: #0f98ba;
+}
+
+a:hover,
+a:active {
+  color: #0f98ba;
+}
+
+/* Třídy */
+
 .velky-ramecek {
-    border: 2px solid rgb(149, 153, 158);
+  border: 2px solid rgb(149, 153, 158);
 }
 
 .chyba {
