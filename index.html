@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./CSS/main.css" />
     <link rel="stylesheet" href="./CSS/class.css" />
+    <script src="./JS/main.js"></script>
     <link rel="shortcut icon" href="./IMG/celsius.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PřevodníkJ</title>
@@ -27,8 +28,8 @@
       <header><h2>Převody</h2></header>
       <section>
         <div class="tlacitka">
-          <button class="one neaktivni">Délka</button
-          ><button class="two neaktivni">Hmotnost</button>
+          <button id="btnDelka" class="one neaktivni">Délka</button
+          ><button id="btnHmotnost" class="two neaktivni">Hmotnost</button>
           <button class="three neaktivni">Objem</button>
           <button class="four neaktivni">Obsah</button>
           <button class="five neaktivni">Rychlost</button
@@ -37,6 +38,10 @@
         <select id="slctDelka">
           <option value="0">In na Cm</option>
           <option value="1">Ft na M</option>
+        </select>
+        <select id="slctHmotnost">
+          <option value="0">Oz na g</option>
+          <option value="1">Lb na g</option>
         </select>
       </section>
     </article>
