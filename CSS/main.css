@@ -1,4 +1,7 @@
+/* Hlavní */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
 body {
   background: #0b0e31;
   font-family: "Poppins", Ubuntu, Roboto, sans-serif;
@@ -27,17 +30,6 @@ article {
   padding: 1rem;
 }
 
-button {
-  background: inherit;
-  color: inherit;
-  border: 1px solid rgb(149, 153, 158);
-  font-size: inherit;
-  font-family: inherit;
-  border-radius: 2rem;
-  margin: 1rem;
-  padding: 0.5rem;
-}
-
 button:hover,
 button:active {
   border-color: #0f98ba;
@@ -45,9 +37,16 @@ button:active {
   color: #0f98ba;
 }
 
-a:hover,
-a:active {
-  color: #0f98ba;
+button {
+  background: inherit;
+  min-width: 6rem;
+  color: inherit;
+  border: 1px solid rgb(149, 153, 158);
+  font-size: 1.25rem;
+  font-family: inherit;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
 }
 
 a {
@@ -68,19 +67,6 @@ input {
   max-width: 6rem;
 }
 
-input:focus {
-  border: 1px solid rgb(149, 153, 158);
-  border-radius: 2rem;
-  margin: 1rem;
-  padding: 0.2rem 1rem;
-  text-align: center;
-}
-
-a:hover img,
-a:active img {
-  border: 1px solid #0f98ba;
-}
-
 a img {
   border: 1px solid rgb(149, 153, 158);
   border-radius: 2rem;
@@ -96,19 +82,41 @@ strong h2 {
   font-weight: bold;
 }
 
-.velky-ramecek {
-  border: 2px solid rgb(149, 153, 158);
+select {
+  border: 1px solid rgb(149, 153, 158);
+  color: rgb(149, 153, 158);
+  background: inherit;
+  font-size: 1.25rem;
+  font-weight: normal;
+  font-family: inherit;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  display: none;
+  cursor: pointer;
+  text-align: center;
 }
 
-.chyba {
-  font-size: 5rem;
-  color: rgb(201, 51, 51);
+option {
+  color: #0b0e31;
 }
 
-.cervena {
-  color: rgb(201, 51, 51);
+/* Speciální */
+
+input:focus {
+  border: 1px solid rgb(149, 153, 158);
+  border-radius: 2rem;
+  margin: 1rem;
+  padding: 0.2rem 1rem;
+  text-align: center;
 }
 
-.velka {
-  font-size: 2rem;
+a:hover img,
+a:active img {
+  border: 1px solid #0f98ba;
+}
+
+a:hover,
+a:active {
+  color: #0f98ba;
 }

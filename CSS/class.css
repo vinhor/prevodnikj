@@ -1,0 +1,71 @@
+/* Klasické */
+
+.velky-ramecek {
+  border: 2px solid rgb(149, 153, 158);
+}
+
+.chyba {
+  font-size: 5rem;
+  color: rgb(201, 51, 51);
+}
+
+.cervena {
+  color: rgb(201, 51, 51);
+}
+
+.velka {
+  font-size: 2rem;
+}
+
+.tlacitka {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* Tlačítka */
+
+.one {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.two {
+  grid-column: 2;
+  grid-row: 1;
+}
+.three {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.four {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.five {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.six {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Speciální */
+
+button.neaktivni:hover,
+button.neaktivni:active {
+  border-color: #0f98ba;
+  cursor: pointer;
+  color: #0f98ba;
+}
+
+button.aktivni {
+  border-color: rgba(149, 153, 158, 0.35);
+  color: rgba(149, 153, 158, 0.35);
+  background-color: #0b0e31;
+  cursor: not-allowed;
+}

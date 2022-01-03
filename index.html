@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="celsius.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./CSS/main.css" />
+    <link rel="stylesheet" href="./CSS/class.css" />
+    <script src="./JS/main.js"></script>
+    <link rel="shortcut icon" href="./IMG/celsius.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PřevodníkJ</title>
   </head>
@@ -22,27 +24,56 @@
         </p>
       </section>
     </article>
-    <strong>
-      <article class="velky-ramecek">
-        <header>
-          <h2>Převody</h2>
-        </header>
-        <section>
-          <p>
-            <a href="./prevody/delka.html">Délka</a>
-          </p>
-          <p><a href="./prevody/hmotnost.html">Hmotnost</a></p>
-          <p><a href="./prevody/objem.html">Objem</a></p>
-        </section>
-      </article></strong
-    >
+    <article class="velky-ramecek">
+      <header><h2>Převody</h2></header>
+      <section>
+        <div class="tlacitka">
+          <button id="btnDelka" class="one neaktivni">Délka</button
+          ><button id="btnHmotnost" class="two neaktivni">Hmotnost</button>
+          <button id="btnObjem" class="three neaktivni">Objem</button>
+          <button id="btnObsah" class="four neaktivni">Obsah</button>
+          <button id="btnRychlost" class="five neaktivni">Rychlost</button
+          ><button id="btnTeplota" class="six neaktivni">Teplota</button>
+        </div>
+        <select id="slctDelka">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">In na Cm</option>
+          <option value="2">Ft na M</option>
+        </select>
+        <select id="slctHmotnost">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">Oz na g</option>
+          <option value="2">Lb na g</option>
+        </select>
+        <select id="slctObjem">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">USA gal na l</option>
+          <option value="2">UK gal na l</option>
+        </select>
+        <select id="slctObsah">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">Acre na ha</option>
+          <option value="2">Sq. in na cm²</option>
+        </select>
+        <select id="slctRychlost">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">M/s na km/h</option>
+          <option value="2">MPH na km/h</option>
+        </select>
+        <select id="slctTeplota">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">°F na °C</option>
+          <option value="2">K na °C</option>
+        </select>
+      </section>
+    </article>
     <article>
       <header>
         <h2>Otevřít GitHubovou stránku projektu</h2>
       </header>
       <section>
         <a href="https://github.com/vinhor/prevodnikj"
-          ><img src="GitHub.png" alt="Ikonka GitHubu"
+          ><img src="./IMG/GitHub.png" alt="Ikonka GitHubu"
         /></a>
       </section>
     </article> -->
@@ -56,7 +87,7 @@
       </header>
       <section>
         <a href="https://vinhor.github.io"
-          ><img src="roz.png" alt="Ikona rozcestníku"
+          ><img src="./IMG/roz.png" alt="Ikona rozcestníku"
         /></a>
       </section>
     </article>
