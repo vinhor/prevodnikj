@@ -158,6 +158,8 @@ window.onload = function () {
       kmNaNm();
     } else if (slctDelka.value == 13) {
       kmNaLy();
+    } else if (slctDelka.value == 14) {
+      kmNaAu();
     }
   }
 
@@ -325,6 +327,19 @@ window.onload = function () {
     } else {
       vysledek = naparsovano / svetelny;
       upozorneni.innerHTML = naparsovano + " km je " + vysledek + " ly";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function kmNaAu() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano / astronomicka;
+      upozorneni.innerHTML = naparsovano + " km je " + vysledek + " AU";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
