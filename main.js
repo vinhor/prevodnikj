@@ -148,6 +148,8 @@ window.onload = function () {
       auNaKm();
     } else if (slctDelka.value == 8) {
       cmNaIn();
+    } else if (slctDelka.value == 9) {
+      mNaFt();
     }
   }
 
@@ -249,6 +251,19 @@ window.onload = function () {
     } else {
       vysledek = naparsovano / 2.54;
       upozorneni.innerHTML = naparsovano + " cm je " + vysledek + " in";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function mNaFt() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano / 0.3048;
+      upozorneni.innerHTML = naparsovano + " m je " + vysledek + " ft";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
