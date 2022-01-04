@@ -134,8 +134,10 @@ window.onload = function () {
       inNaCm();
     } else if (slctDelka.value == 2) {
       ftNaM();
-    } else {
+    } else if (slctDelka.value == 3) {
       ydNaM();
+    } else {
+      miNaKm();
     }
   }
 
@@ -173,6 +175,19 @@ window.onload = function () {
     } else {
       vysledek = naparsovano * 0.9144;
       upozorneni.innerHTML = naparsovano + " yd je " + vysledek + " m";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function miNaKm() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * 1.609344;
+      upozorneni.innerHTML = naparsovano + " mi je " + vysledek + " km";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
