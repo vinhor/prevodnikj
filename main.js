@@ -150,6 +150,8 @@ window.onload = function () {
       cmNaIn();
     } else if (slctDelka.value == 9) {
       mNaFt();
+    } else if (slctDelka.value == 10) {
+      mNaYd();
     }
   }
 
@@ -264,6 +266,19 @@ window.onload = function () {
     } else {
       vysledek = naparsovano / 0.3048;
       upozorneni.innerHTML = naparsovano + " m je " + vysledek + " ft";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function mNaYd() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano / 0.9144;
+      upozorneni.innerHTML = naparsovano + " m je " + vysledek + " yd";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
