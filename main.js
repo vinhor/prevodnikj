@@ -15,6 +15,7 @@ window.onload = function () {
   let inpHodnota = document.getElementById("inpHodnota");
   let upozorneni = document.getElementById("upozorneni");
   let btnPrevod = document.getElementById("btnPrevod");
+  let svetelny = 9.46073e12;
   let vysledek;
   let naparsovano;
 
@@ -136,8 +137,10 @@ window.onload = function () {
       ftNaM();
     } else if (slctDelka.value == 3) {
       ydNaM();
-    } else {
+    } else if (slctDelka.value == 4) {
       miNaKm();
+    } else if (slctDelka.value == 5) {
+      nmNaKm();
     }
   }
 
@@ -188,6 +191,19 @@ window.onload = function () {
     } else {
       vysledek = naparsovano * 1.609344;
       upozorneni.innerHTML = naparsovano + " mi je " + vysledek + " km";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function nmNaKm() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * 1.852001;
+      upozorneni.innerHTML = naparsovano + " n. m. je " + vysledek + " km";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
