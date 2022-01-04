@@ -35,6 +35,7 @@ window.onload = function () {
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
+    btnPrevod.onclick = inNaCm;
   };
 
   btnHmotnost.onclick = function () {
@@ -127,11 +128,11 @@ window.onload = function () {
     }
   };
 
-  btnPrevod.onclick = function () {
+  function inNaCm() {
     inpHodnota = inpHodnota.value.trim();
     naparsovano = parseFloat(inpHodnota);
     if (isNaN(naparsovano) || (naparsovano = null)) {
-      upozorneni.innerHTML = "Nezadali jste číslo";
+      upozorneni.innerHTML = "Nezadali jste číslo!";
     }
-  };
+  }
 };
