@@ -11,6 +11,13 @@ window.onload = function () {
   let btnObsah = document.getElementById("btnObsah");
   let btnRychlost = document.getElementById("btnRychlost");
   let btnTeplota = document.getElementById("btnTeplota");
+  let pInput = document.getElementById("pInput");
+  let inpHodnota = document.getElementById("inpHodnota");
+  let labHodnota = document.getElementById("labHodnota");
+  let upozorneni = document.getElementById("upozorneni");
+  let btnPrevod = document.getElementById("btnPrevod");
+  let vysledek;
+  let naparsovano;
 
   btnDelka.onclick = function () {
     slctDelka.style.display = "inline";
@@ -25,6 +32,9 @@ window.onload = function () {
     btnObsah.className = "four neaktivni";
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
+    if ((pInput.style.display = "none")) {
+      pInput.style.display = "inline";
+    }
   };
 
   btnHmotnost.onclick = function () {
@@ -40,6 +50,9 @@ window.onload = function () {
     btnObsah.className = "four neaktivni";
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
+    if ((pInput.style.display = "none")) {
+      pInput.style.display = "inline";
+    }
   };
 
   btnObjem.onclick = function () {
@@ -55,6 +68,9 @@ window.onload = function () {
     btnObsah.className = "four neaktivni";
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
+    if ((pInput.style.display = "none")) {
+      pInput.style.display = "inline";
+    }
   };
 
   btnObsah.onclick = function () {
@@ -70,6 +86,9 @@ window.onload = function () {
     btnObsah.className = "four aktivni";
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
+    if ((pInput.style.display = "none")) {
+      pInput.style.display = "inline";
+    }
   };
 
   btnRychlost.onclick = function () {
@@ -85,6 +104,9 @@ window.onload = function () {
     btnObsah.className = "four neaktivni";
     btnRychlost.className = "five aktivni";
     btnTeplota.className = "six neaktivni";
+    if ((pInput.style.display = "none")) {
+      pInput.style.display = "inline";
+    }
   };
 
   btnTeplota.onclick = function () {
@@ -100,5 +122,16 @@ window.onload = function () {
     btnObsah.className = "four neaktivni";
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six aktivni";
+    if ((pInput.style.display = "none")) {
+      pInput.style.display = "inline";
+    }
+  };
+
+  btnPrevod.onclick = function () {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || (naparsovano = null)) {
+      upozorneni.innerHTML = "Nezadali jste číslo";
+    }
   };
 };
