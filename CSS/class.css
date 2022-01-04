@@ -69,3 +69,9 @@ button.aktivni {
   background-color: #0b0e31;
   cursor: not-allowed;
 }
+
+/* IDs */
+
+#pInput {
+  display: none;
+}
