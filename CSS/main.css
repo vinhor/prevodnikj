@@ -95,11 +95,14 @@ select {
 
 option {
   color: #0b0e31;
+  font-family: inherit;
 }
 
 optgroup {
   color: #0b0e31;
+  font-family: inherit;
   font-style: normal;
+  font-weight: normal;
 }
 
 /* Speciální */
