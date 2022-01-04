@@ -152,6 +152,8 @@ window.onload = function () {
       mNaFt();
     } else if (slctDelka.value == 10) {
       mNaYd();
+    } else if (slctDelka.value == 11) {
+      kmNaMi();
     }
   }
 
@@ -279,6 +281,19 @@ window.onload = function () {
     } else {
       vysledek = naparsovano / 0.9144;
       upozorneni.innerHTML = naparsovano + " m je " + vysledek + " yd";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function kmNaMi() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano / 1.609344;
+      upozorneni.innerHTML = naparsovano + " km je " + vysledek + " mi";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
