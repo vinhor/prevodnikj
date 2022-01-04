@@ -13,7 +13,6 @@ window.onload = function () {
   let btnTeplota = document.getElementById("btnTeplota");
   let pInput = document.getElementById("pInput");
   let inpHodnota = document.getElementById("inpHodnota");
-  let labHodnota = document.getElementById("labHodnota");
   let upozorneni = document.getElementById("upozorneni");
   let btnPrevod = document.getElementById("btnPrevod");
   let vysledek;
@@ -35,7 +34,7 @@ window.onload = function () {
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
-    btnPrevod.onclick = inNaCm;
+    btnPrevod.onclick = vyberDelka;
   };
 
   btnHmotnost.onclick = function () {
@@ -128,11 +127,26 @@ window.onload = function () {
     }
   };
 
+  function vyberDelka() {
+    if (slctDelka.value == 0) {
+      upozorneni.innerHTML = "Nevybrali jste převod!";
+    } else if (slctDelka.value == 1) {
+      inNaCm();
+    } else if (slct.value == 2) {
+      ftNaCm();
+    }
+  }
+
   function inNaCm() {
     inpHodnota = inpHodnota.value.trim();
     naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || (naparsovano = null)) {
+    if (isNaN(naparsovano) || naparsovano == null) {
       upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * 2.54;
+      upozorneni.innerHTML = naparsovano + " cm je " + vysledek + " in";
     }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
   }
 };
