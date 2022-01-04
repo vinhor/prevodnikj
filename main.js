@@ -16,6 +16,7 @@ window.onload = function () {
   let upozorneni = document.getElementById("upozorneni");
   let btnPrevod = document.getElementById("btnPrevod");
   let svetelny = 9.46073e12;
+  let astronomicka = 1.495979e8;
   let vysledek;
   let naparsovano;
 
@@ -143,6 +144,8 @@ window.onload = function () {
       nmNaKm();
     } else if (slctDelka.value == 6) {
       lyNaKm();
+    } else if (slctDelka.value == 7) {
+      auNaKm();
     }
   }
 
@@ -219,6 +222,19 @@ window.onload = function () {
     } else {
       vysledek = naparsovano * svetelny;
       upozorneni.innerHTML = naparsovano + " ly je " + vysledek + " km";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function auNaKm() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * astronomicka;
+      upozorneni.innerHTML = naparsovano + " AU je " + vysledek + " km";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
