@@ -129,11 +129,11 @@ window.onload = function () {
 
   function vyberDelka() {
     if (slctDelka.value == 0) {
-      upozorneni.innerHTML = "Nevybrali jste převod!";
+      upozorneni.innerHTML = "Nevybrali jste si převod!";
     } else if (slctDelka.value == 1) {
       inNaCm();
-    } else if (slct.value == 2) {
-      ftNaCm();
+    } else {
+      ftNaM();
     }
   }
 
@@ -144,7 +144,20 @@ window.onload = function () {
       upozorneni.innerHTML = "Nezadali jste číslo!";
     } else {
       vysledek = naparsovano * 2.54;
-      upozorneni.innerHTML = naparsovano + " cm je " + vysledek + " in";
+      upozorneni.innerHTML = naparsovano + " in je " + vysledek + " cm";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function ftNaM() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * 0.3048;
+      upozorneni.innerHTML = naparsovano + " ft je " + vysledek + " m";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
