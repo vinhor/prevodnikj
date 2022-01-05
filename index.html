@@ -27,9 +27,10 @@
           které jsou nejčastěji používané v ČR. Patří mezi ně:
           <br />cm, m, km, g, kg, l, ha, cm², dm², km², km/h, °C
         </p>
-        <>
+        <p>
           Jako kategorie O (ostatní) se zde označují jednotky, které
-          <strong>nepatří</strong> do NP. (Poznámka: USA pinty a USA galony se zde používají kapalné)
+          <strong>nepatří</strong> do NP. (Poznámka: USA pinty a USA galony se
+          zde používají kapalné)
         </p>
         <p class="velka">
           E+x posouvá desetinnou čárku dozadu (doprava) o x míst<br />E-x
@@ -101,8 +102,20 @@
         </select>
         <select id="slctObsah">
           <option value="0" selected>Vyberte převod</option>
-          <option value="1">Acre na ha</option>
-          <option value="2">Sq. in na cm²</option>
+          <optgroup label="NP na O">
+            <option value="1">Acre na ha</option>
+            <option value="2">Sq. in na cm²</option>
+            <option value="3">Sq. ft na dm²</option>
+            <option value="4">Sq. yd na m²</option>
+            <option value="5">Mile² na km²</option>
+          </optgroup>
+          <optgroup>
+            <option value="6">Ha na acre</option>
+            <option value="7">Cm² na sq. in</option>
+            <option value="8">Dm² na sq. ft</option>
+            <option value="9">M² na sq. yd</option>
+            <option value="10">Mile² na km²</option>
+          </optgroup>
         </select>
         <select id="slctRychlost">
           <option value="0" selected>Vyberte převod</option>
