@@ -686,4 +686,17 @@ window.onload = function () {
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
   }
+
+  function sqmNaSqyd() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano / 0.8361274;
+      upozorneni.innerHTML = naparsovano + " m² je " + vysledek + " sq. yd";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
 };
