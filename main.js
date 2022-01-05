@@ -15,10 +15,17 @@ window.onload = function () {
   let inpHodnota = document.getElementById("inpHodnota");
   let upozorneni = document.getElementById("upozorneni");
   let btnPrevod = document.getElementById("btnPrevod");
+  let divt = document.getElementById("divt");
   let svetelny = 9.46073e12;
   let astronomicka = 1.495979e8;
   let vysledek;
   let naparsovano;
+
+  if (window.innerWidth < 475) {
+    divt.className = "malatlacitka";
+  } else {
+    divt.className = "tlacitka";
+  }
 
   btnDelka.onclick = function () {
     slctDelka.style.display = "inline";
