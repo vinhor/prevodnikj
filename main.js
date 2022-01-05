@@ -16,6 +16,11 @@ window.onload = function () {
   let upozorneni = document.getElementById("upozorneni");
   let btnPrevod = document.getElementById("btnPrevod");
   let divt = document.getElementById("divt");
+  let br = document.createElement("br");
+  let br2 = document.createElement("br");
+  let br3 = document.createElement("br");
+  let br4 = document.createElement("br");
+  let br5 = document.createElement("br");
   let svetelny = 9.46073e12;
   let astronomicka = 1.495979e8;
   let vysledek;
@@ -23,6 +28,11 @@ window.onload = function () {
 
   if (window.innerWidth < 475) {
     divt.className = "malatlacitka";
+    divt.insertBefore(br, btnTeplota);
+    divt.insertBefore(br2, btnHmotnost);
+    divt.insertBefore(br3, btnObjem);
+    divt.insertBefore(br4, btnObsah);
+    divt.insertBefore(br5, btnRychlost);
   } else {
     divt.className = "tlacitka";
   }
