@@ -72,6 +72,7 @@ window.onload = function () {
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
+    btnPrevod.onclick = vyberHmotnost;
   };
 
   btnObjem.onclick = function () {
@@ -177,6 +178,20 @@ window.onload = function () {
       kmNaLy();
     } else if (slctDelka.value == 14) {
       kmNaAu();
+    }
+  }
+
+  function vyberHmotnost() {
+    if (slctHmotnost.value == 0) {
+      upozorneni.innerHTML = "Nevybrali jste si převod!";
+    } else if (slctHmotnost.value == 1) {
+      ozNaG();
+    } else if (slctDelka.value == 2) {
+      lbNaKg();
+    } else if (slctHmotnost.value == 3) {
+      gNaOz();
+    } else if (slctHmotnost.value == 4) {
+      kgNaLb();
     }
   }
 
