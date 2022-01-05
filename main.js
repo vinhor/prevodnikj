@@ -110,6 +110,7 @@ window.onload = function () {
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
+    btnPrevod.onclick = vyberObsah;
   };
 
   btnRychlost.onclick = function () {
@@ -215,6 +216,32 @@ window.onload = function () {
       lNaUsaPt();
     } else if (slctObjem.value == 8) {
       lNaUkPt();
+    }
+  }
+
+  function vyberObsah() {
+    if (slctObsah.value == 0) {
+      upozorneni.innerHTML = "Nevybrali jste si převod!";
+    } else if (slctObsah.value == 1) {
+      acreNaHa();
+    } else if (slctObsah.value == 2) {
+      sqinNaSqcm();
+    } else if (slctObsah == 3) {
+      sqftNaSqdm();
+    } else if (slctObsah == 4) {
+      sqydNaSqm();
+    } else if (slctObsah == 5) {
+      sqmileNaSqkm();
+    } else if (slctObsah == 6) {
+      haNaAcre();
+    } else if (slctObsah == 7) {
+      sqcmNaSqin();
+    } else if (slctObsah == 8) {
+      sqdmNaSqft();
+    } else if (slctObsah == 9) {
+      sqmNaSqyd();
+    } else if (slctObsah == 10) {
+      sqkmNaSqmile();
     }
   }
 
@@ -551,6 +578,19 @@ window.onload = function () {
     } else {
       vysledek = naparsovano / 0.56826125;
       upozorneni.innerHTML = naparsovano + " l je " + vysledek + " UK pt";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function acreNaHa() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * 0.404686;
+      upozorneni.innerHTML = naparsovano + " acre je " + vysledek + " ha";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
