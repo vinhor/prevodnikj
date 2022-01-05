@@ -91,6 +91,7 @@ window.onload = function () {
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
+    btnPrevod.onclick = vyberObjem;
   };
 
   btnObsah.onclick = function () {
@@ -192,6 +193,28 @@ window.onload = function () {
       gNaOz();
     } else if (slctHmotnost.value == 4) {
       kgNaLb();
+    }
+  }
+
+  function vyberObjem() {
+    if (slctObjem.value == 0) {
+      upozorneni.innerHTML = "Nevybrali jste si převod!";
+    } else if (slctObjem.value == 1) {
+      usaGalNaL();
+    } else if (slctObjem.value == 2) {
+      ukGalNaL();
+    } else if (slctObjem.value == 3) {
+      usaPtNaL();
+    } else if (slctObjem.value == 4) {
+      ukPtNaL();
+    } else if (slctObjem.value == 5) {
+      lNaUsaGal();
+    } else if (slctObjem.value == 6) {
+      lNaUkGal();
+    } else if (slctObjem.value == 7) {
+      lNaUsaPt();
+    } else if (slctObjem.value == 8) {
+      lNaUkPt();
     }
   }
 
@@ -415,6 +438,7 @@ window.onload = function () {
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
   }
+
   function kgNaLb() {
     inpHodnota = inpHodnota.value.trim();
     naparsovano = parseFloat(inpHodnota);
