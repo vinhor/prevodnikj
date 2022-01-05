@@ -186,7 +186,7 @@ window.onload = function () {
       upozorneni.innerHTML = "Nevybrali jste si převod!";
     } else if (slctHmotnost.value == 1) {
       ozNaG();
-    } else if (slctDelka.value == 2) {
+    } else if (slctHmotnost.value == 2) {
       lbNaKg();
     } else if (slctHmotnost.value == 3) {
       gNaOz();
@@ -385,6 +385,19 @@ window.onload = function () {
     } else {
       vysledek = naparsovano * 28.34952;
       upozorneni.innerHTML = naparsovano + " oz je " + vysledek + " g";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function lbNaKg() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * 0.4535924;
+      upozorneni.innerHTML = naparsovano + " lb je " + vysledek + " kg";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
