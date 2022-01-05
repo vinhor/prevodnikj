@@ -226,21 +226,21 @@ window.onload = function () {
       acreNaHa();
     } else if (slctObsah.value == 2) {
       sqinNaSqcm();
-    } else if (slctObsah == 3) {
+    } else if (slctObsah.value == 3) {
       sqftNaSqdm();
-    } else if (slctObsah == 4) {
+    } else if (slctObsah.value == 4) {
       sqydNaSqm();
-    } else if (slctObsah == 5) {
+    } else if (slctObsah.value == 5) {
       sqmileNaSqkm();
-    } else if (slctObsah == 6) {
+    } else if (slctObsah.value == 6) {
       haNaAcre();
-    } else if (slctObsah == 7) {
+    } else if (slctObsah.value == 7) {
       sqcmNaSqin();
-    } else if (slctObsah == 8) {
+    } else if (slctObsah.value == 8) {
       sqdmNaSqft();
-    } else if (slctObsah == 9) {
+    } else if (slctObsah.value == 9) {
       sqmNaSqyd();
-    } else if (slctObsah == 10) {
+    } else if (slctObsah.value == 10) {
       sqkmNaSqmile();
     }
   }
@@ -604,6 +604,19 @@ window.onload = function () {
     } else {
       vysledek = naparsovano * 6.4516;
       upozorneni.innerHTML = naparsovano + " sq. in je " + vysledek + " cm²";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function sqftNaSqdm() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * 9.290304;
+      upozorneni.innerHTML = naparsovano + " sq. ft je " + vysledek + " dm²";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
