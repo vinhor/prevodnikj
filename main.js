@@ -634,4 +634,17 @@ window.onload = function () {
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
   }
+
+  function sqmileNaSqkm() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * 2.5899881;
+      upozorneni.innerHTML = naparsovano + " mile² je " + vysledek + " km²";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
 };
