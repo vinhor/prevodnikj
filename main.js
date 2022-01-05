@@ -490,4 +490,17 @@ window.onload = function () {
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
   }
+
+  function ukPtNaL() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * 0.56826125;
+      upozorneni.innerHTML = naparsovano + " UK pt je " + vysledek + " l";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
 };
