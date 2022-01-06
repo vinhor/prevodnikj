@@ -864,7 +864,7 @@ window.onload = function () {
     } else {
       pomocnyVypocet = 1.8 * naparsovano;
       vysledek = pomocnyVypocet + 32;
-      upozorneni.innerHTML = naparsovano + " °C je " + vysledek + " °F";
+      upozorneni.innerHTML = naparsovano + " °F je " + vysledek + " °C";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
@@ -877,7 +877,20 @@ window.onload = function () {
       upozorneni.innerHTML = "Nezadali jste číslo!";
     } else {
       vysledek = naparsovano + 273.15;
-      upozorneni.innerHTML = naparsovano + " °C je " + vysledek + " K";
+      upozorneni.innerHTML = naparsovano + " K je " + vysledek + " °C";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function cNaF() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano + 273.15;
+      upozorneni.innerHTML = naparsovano + " °F je " + vysledek + " °C";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
