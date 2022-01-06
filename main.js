@@ -148,6 +148,7 @@ window.onload = function () {
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
+    btnPrevod.onclick = vyberTeplota;
   };
 
   function vyberDelka() {
@@ -265,6 +266,20 @@ window.onload = function () {
       kmhNaKn();
     } else if (slctRychlost.value == 8) {
       kmhNaMa();
+    }
+  }
+
+  function vyberTeplota() {
+    if (slctTeplota.value == 0) {
+      upozorneni.innerHTML = "Nevybrali jste si převod!";
+    } else if (slctTeplota.value == 1) {
+      cNaF();
+    } else if (slctTeplota.value == 2) {
+      cNaK();
+    } else if (slctTeplota.value == 3) {
+      fNaC();
+    } else if (slctTeplota.value == 4) {
+      kNaC();
     }
   }
 
