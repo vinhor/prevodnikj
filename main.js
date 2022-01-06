@@ -761,4 +761,17 @@ window.onload = function () {
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
   }
+
+  function knNaKmh() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      vysledek = naparsovano * 1.852001;
+      upozorneni.innerHTML = naparsovano + " kn je " + vysledek + " km/h";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
 };
