@@ -128,6 +128,7 @@ window.onload = function () {
     btnTeplota.className = "six neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
+      btnPrevod.onclick = vyberRychlost;
     }
   };
 
@@ -242,6 +243,28 @@ window.onload = function () {
       sqmNaSqyd();
     } else if (slctObsah.value == 10) {
       sqkmNaSqmile();
+    }
+  }
+
+  function vyberRychlost() {
+    if (slctRychlost.value == 0) {
+      upozorneni.innerHTML = "Nevybrali jste si převod!";
+    } else if (slctRychlost.value == 1) {
+      msNaKmh();
+    } else if (slctRychlost.value == 2) {
+      mphNaKmh();
+    } else if (slctRychlost.value == 3) {
+      knNaKmh();
+    } else if (slctRychlost.value == 4) {
+      maNaKmh();
+    } else if (slctRychlost.value == 5) {
+      kmhNaMs();
+    } else if (slctRychlost.value == 6) {
+      kmhNaMph();
+    } else if (slctRychlost.value == 7) {
+      kmhNaKn();
+    } else if (slctRychlost.value == 8) {
+      kmhNaMa();
     }
   }
 
