@@ -134,8 +134,14 @@
         </select>
         <select id="slctTeplota">
           <option value="0" selected>Vyberte převod</option>
-          <option value="1">°F na °C</option>
-          <option value="2">K na °C</option>
+          <optgroup label="NP na O">
+            <option value="1">°F na °C</option>
+            <option value="2">K na °C</option>
+          </optgroup>
+          <optgroup label="O na NP">
+            <option value="3">°C na °F</option>
+            <option value="4">°C na K</option>
+          </optgroup>
         </select>
         <p id="pInput">
           <br />
