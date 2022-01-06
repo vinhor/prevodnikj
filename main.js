@@ -21,6 +21,7 @@ window.onload = function () {
   let br3 = document.createElement("br");
   let br4 = document.createElement("br");
   let br5 = document.createElement("br");
+  let pomocnyVypocet;
   let svetelny = 9.46073e12;
   let astronomicka = 1.495979e8;
   let vysledek;
@@ -850,6 +851,20 @@ window.onload = function () {
     } else {
       vysledek = naparsovano / 1225.044;
       upozorneni.innerHTML = naparsovano + " km/h je " + vysledek + " Ma";
+    }
+    inpHodnota = document.getElementById("inpHodnota");
+    naparsovano = null;
+  }
+
+  function cNaF() {
+    inpHodnota = inpHodnota.value.trim();
+    naparsovano = parseFloat(inpHodnota);
+    if (isNaN(naparsovano) || naparsovano == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    } else {
+      pomocnyVypocet = 1.8 * naparsovano;
+      vysledek = pomocnyVypocet + 32;
+      upozorneni.innerHTML = naparsovano + " °C je " + vysledek + " °F";
     }
     inpHodnota = document.getElementById("inpHodnota");
     naparsovano = null;
