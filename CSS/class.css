@@ -17,6 +17,23 @@
   font-size: 2rem;
 }
 
+.cerveny-article {
+  border: 1px solid rgb(201, 51, 51);
+  color: rgb(201, 51, 51);
+}
+
+.cerveny-article a img {
+  border: 1px solid rgb(201, 51, 51);
+  border-radius: 2rem;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.cerveny-article a:hover img,
+.cerveny-article a:active img {
+  border: 1px solid #0f98ba;
+}
+
 .tlacitka {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
