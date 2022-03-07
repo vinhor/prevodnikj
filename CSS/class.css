@@ -93,21 +93,3 @@ button.aktivni {
 #pInput {
   display: none;
 }
-
-/* SVG */
-
-.svg-icon {
-  width: 10rem;
-  height: 10rem;
-}
-
-.svg-icon path,
-.svg-icon polygon,
-.svg-icon rect {
-  fill: rgb(201, 51, 51);
-}
-
-.svg-icon circle {
-  stroke: rgb(201, 51, 51);
-  stroke-width: 1;
-}
