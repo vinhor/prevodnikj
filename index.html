@@ -6,11 +6,7 @@
     <link rel="stylesheet" href="./CSS/main.css" />
     <link rel="stylesheet" href="./CSS/class.css" />
     <script src="./main.js"></script>
-    <link
-      rel="shortcut icon"
-      href="./IMG/Blue/celsius.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./IMG/celsius.ico" type="image/x-icon" />
     <meta -me="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PřevodníkJ</title>
   </head>
@@ -80,10 +76,6 @@
           <option value="2">UK gal - l</option>
           <option value="3">USA pt - l</option>
           <option value="4">UK pt - l</option>
-          <option value="5">l - USA gal</option>
-          <option value="6">l - UK gal</option>
-          <option value="7">l - USA pt</option>
-          <option value="8">l - UK pt</option>
         </select>
         <select id="slctObsah">
           <option value="0" selected>Vyberte převod</option>
@@ -92,11 +84,6 @@
           <option value="3">sq. ft - dm²</option>
           <option value="4">sq. yd - m²</option>
           <option value="5">mile² - km²</option>
-          <option value="6">ha - acre</option>
-          <option value="7">cm² - sq. in</option>
-          <option value="8">dm² - sq. ft</option>
-          <option value="9">m² - sq. yd</option>
-          <option value="10">mile² - km²</option>
         </select>
         <select id="slctRychlost">
           <option value="0" selected>Vyberte převod</option>
@@ -104,22 +91,18 @@
           <option value="2">MPH - km/h</option>
           <option value="3">kn - km/h</option>
           <option value="4">Ma - km/h</option>
-          <option value="5">km/h - m/s</option>
-          <option value="6">km/h - MPH</option>
-          <option value="7">km/h - kn</option>
-          <option value="8">km/h - Ma</option>
         </select>
         <select id="slctTeplota">
           <option value="0" selected>Vyberte převod</option>
           <option value="1">°F - °C</option>
           <option value="2">K - °C</option>
-          <option value="3">°C - °F</option>
-          <option value="4">°C - K</option>
         </select>
         <p id="pInput">
           <br />
-          <label for="inpHodnota">Zadejte hodnotu: </label>
-          <input type="text" id="inpHodnota" />
+          <input type="text" id="vlevo" />
+          <label for="vlevo" id="lvlevo"></label> =
+          <input type="text" id="vpravo" />
+          <label for="vpravo" id="lvpravo"></label>
           <br />
           <button id="btnPrevod">Převést</button>
           <br />
@@ -133,7 +116,7 @@
       </header>
       <section>
         <a href="https://github.com/vinhor/prevodnikj"
-          ><img src="./IMG/Blue/GitHub.png" alt="Ikonka GitHubu"
+          ><img src="./IMG/GitHub.png" alt="Ikonka GitHubu"
         /></a>
       </section>
     </article>
@@ -143,7 +126,7 @@
       </header>
       <section>
         <a href="https://vinhor.github.io"
-          ><img src="./IMG/Blue/roz.png" alt="Iko- rozcestníku"
+          ><img src="./IMG/roz.png" alt="Iko- rozcestníku"
         /></a>
       </section>
     </article>

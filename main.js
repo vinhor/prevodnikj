@@ -11,8 +11,6 @@ window.onload = function () {
   let btnObsah = document.getElementById("btnObsah");
   let btnRychlost = document.getElementById("btnRychlost");
   let btnTeplota = document.getElementById("btnTeplota");
-  let pInput = document.getElementById("pInput");
-  let inpHodnota = document.getElementById("inpHodnota");
   let upozorneni = document.getElementById("upozorneni");
   let btnPrevod = document.getElementById("btnPrevod");
   let divt = document.getElementById("divt");
@@ -21,11 +19,32 @@ window.onload = function () {
   let br3 = document.createElement("br");
   let br4 = document.createElement("br");
   let br5 = document.createElement("br");
+  let lvlevo = document.getElementById("lvlevo");
+  let lvpravo = document.getElementById("lvpravo");
   let pomocnyVypocet;
   let svetelny = 9.46073e12;
   let astronomicka = 1.495979e8;
   let vysledek;
-  let naparsovano;
+  let naparsovanoVlevo;
+  let naparsovanoVpravo;
+
+  slctDelka.value = 0;
+  slctHmotnost.value = 0;
+  slctObjem.value = 0;
+  slctObsah.value = 0;
+  slctRychlost.value = 0;
+  slctTeplota.value = 0;
+
+  vlevo.value = null;
+  vpravo.value = null;
+
+  vlevo.onfocus = function () {
+    vpravo.value = null;
+  };
+
+  vpravo.onfocus = function () {
+    vlevo.value = null;
+  };
 
   if (window.innerWidth < 475) {
     divt.className = "malatlacitka";
@@ -152,761 +171,167 @@ window.onload = function () {
     btnPrevod.onclick = vyberTeplota;
   };
 
+  slctDelka.onchange = function () {
+    vlevo.value = null;
+    vpravo.value = null;
+    if (slctDelka.value == 0) {
+      lvlevo.innerHTML = "";
+      lvpravo.innerHTML = "";
+    } else if (slctDelka.value == 1) {
+      lvlevo.innerHTML = "in";
+      lvpravo.innerHTML = "cm";
+    } else if (slctDelka.value == 2) {
+      lvlevo.innerHTML = "ft";
+      lvpravo.innerHTML = "m";
+    } else if (slctDelka.value == 3) {
+      lvlevo.innerHTML = "yd";
+      lvpravo.innerHTML = "m";
+    } else if (slctDelka.value == 4) {
+      lvlevo.innerHTML = "mi";
+      lvpravo.innerHTML = "km";
+    } else if (slctDelka.value == 5) {
+      lvlevo.innerHTML = "n. m.";
+      lvpravo.innerHTML = "km";
+    } else if (slctDelka.value == 6) {
+      lvlevo.innerHTML = "ly";
+      lvpravo.innerHTML = "km";
+    } else if (slctDelka.value == 7) {
+      lvlevo.innerHTML = "AU";
+      lvpravo.innerHTML = "km";
+    }
+  };
+
   function vyberDelka() {
+    upozorneni.innerHTML = "";
     if (slctDelka.value == 0) {
       upozorneni.innerHTML = "Nevybrali jste si převod!";
     } else if (slctDelka.value == 1) {
-      inNaCm();
+      inCm();
     } else if (slctDelka.value == 2) {
-      ftNaM();
+      ftM();
     } else if (slctDelka.value == 3) {
-      ydNaM();
+      ydM();
     } else if (slctDelka.value == 4) {
-      miNaKm();
+      miKm();
     } else if (slctDelka.value == 5) {
-      nmNaKm();
+      nmKm();
     } else if (slctDelka.value == 6) {
-      lyNaKm();
+      lyKm();
     } else if (slctDelka.value == 7) {
-      auNaKm();
-    } else if (slctDelka.value == 8) {
-      cmNaIn();
-    } else if (slctDelka.value == 9) {
-      mNaFt();
-    } else if (slctDelka.value == 10) {
-      mNaYd();
-    } else if (slctDelka.value == 11) {
-      kmNaMi();
-    } else if (slctDelka.value == 12) {
-      kmNaNm();
-    } else if (slctDelka.value == 13) {
-      kmNaLy();
-    } else if (slctDelka.value == 14) {
-      kmNaAu();
+      auKm();
     }
   }
 
   function vyberHmotnost() {
+    upozorneni.innerHTML = "";
     if (slctHmotnost.value == 0) {
       upozorneni.innerHTML = "Nevybrali jste si převod!";
     } else if (slctHmotnost.value == 1) {
-      ozNaG();
+      ozG();
     } else if (slctHmotnost.value == 2) {
-      lbNaKg();
-    } else if (slctHmotnost.value == 3) {
-      gNaOz();
-    } else if (slctHmotnost.value == 4) {
-      kgNaLb();
+      lbKg();
     }
   }
 
   function vyberObjem() {
+    upozorneni.innerHTML = "";
     if (slctObjem.value == 0) {
       upozorneni.innerHTML = "Nevybrali jste si převod!";
     } else if (slctObjem.value == 1) {
-      usaGalNaL();
+      usaGalL();
     } else if (slctObjem.value == 2) {
-      ukGalNaL();
+      ukGalL();
     } else if (slctObjem.value == 3) {
-      usaPtNaL();
+      usaPtL();
     } else if (slctObjem.value == 4) {
-      ukPtNaL();
-    } else if (slctObjem.value == 5) {
-      lNaUsaGal();
-    } else if (slctObjem.value == 6) {
-      lNaUkGal();
-    } else if (slctObjem.value == 7) {
-      lNaUsaPt();
-    } else if (slctObjem.value == 8) {
-      lNaUkPt();
+      ukPtL();
     }
   }
 
   function vyberObsah() {
+    upozorneni.innerHTML = "";
     if (slctObsah.value == 0) {
       upozorneni.innerHTML = "Nevybrali jste si převod!";
     } else if (slctObsah.value == 1) {
-      acreNaHa();
+      acreHa();
     } else if (slctObsah.value == 2) {
-      sqinNaSqcm();
+      sqinSqcm();
     } else if (slctObsah.value == 3) {
-      sqftNaSqdm();
+      sqftSqdm();
     } else if (slctObsah.value == 4) {
-      sqydNaSqm();
+      sqydSqm();
     } else if (slctObsah.value == 5) {
-      sqmileNaSqkm();
-    } else if (slctObsah.value == 6) {
-      haNaAcre();
-    } else if (slctObsah.value == 7) {
-      sqcmNaSqin();
-    } else if (slctObsah.value == 8) {
-      sqdmNaSqft();
-    } else if (slctObsah.value == 9) {
-      sqmNaSqyd();
-    } else if (slctObsah.value == 10) {
-      sqkmNaSqmile();
+      sqmileSqkm();
     }
   }
 
   function vyberRychlost() {
+    upozorneni.innerHTML = "";
     if (slctRychlost.value == 0) {
       upozorneni.innerHTML = "Nevybrali jste si převod!";
     } else if (slctRychlost.value == 1) {
-      msNaKmh();
+      msKmh();
     } else if (slctRychlost.value == 2) {
-      mphNaKmh();
+      mphKmh();
     } else if (slctRychlost.value == 3) {
-      knNaKmh();
+      knKmh();
     } else if (slctRychlost.value == 4) {
-      maNaKmh();
-    } else if (slctRychlost.value == 5) {
-      kmhNaMs();
-    } else if (slctRychlost.value == 6) {
-      kmhNaMph();
-    } else if (slctRychlost.value == 7) {
-      kmhNaKn();
-    } else if (slctRychlost.value == 8) {
-      kmhNaMa();
+      maKmh();
     }
   }
 
   function vyberTeplota() {
+    upozorneni.innerHTML = "";
     if (slctTeplota.value == 0) {
       upozorneni.innerHTML = "Nevybrali jste si převod!";
     } else if (slctTeplota.value == 1) {
-      fNaC();
+      fC();
     } else if (slctTeplota.value == 2) {
-      kNaC();
-    } else if (slctTeplota.value == 3) {
-      cNaF();
-    } else if (slctTeplota.value == 4) {
-      cNaK();
+      kC();
     }
   }
 
-  function inNaCm() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 2.54;
-      upozorneni.innerHTML = naparsovano + " in je " + vysledek + " cm";
+  function inCm() {
+    naparsovanoVlevo = parseFloat(vlevo.value.trim());
+    naparsovanoVpravo = parseFloat(vpravo.value.trim());
+    if (isNaN(naparsovanoVlevo)) {
+      naparsovanoVlevo = null;
     }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
+    if (isNaN(naparsovanoVpravo)) {
+      naparsovanoVpravo = null;
+    }
+    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
+      vysledek = naparsovanoVlevo * 2.54;
+      vpravo.value = vysledek;
+    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
+      vysledek = naparsovanoVpravo / 2.54;
+      vlevo.value = vysledek;
+    } else if (naparsovanoVpravo == null && naparsovanoVlevo == null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    }
+    naparsovanoVlevo = null;
+    naparovanoVpravo = null;
   }
 
-  function ftNaM() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 0.3048;
-      upozorneni.innerHTML = naparsovano + " ft je " + vysledek + " m";
+  function ftM() {
+    naparsovanoVlevo = parseFloat(vlevo.value.trim());
+    naparsovanoVpravo = parseFloat(vpravo.value.trim());
+    if (isNaN(naparsovanoVlevo)) {
+      naparsovanoVlevo = null;
     }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function ydNaM() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 0.9144;
-      upozorneni.innerHTML = naparsovano + " yd je " + vysledek + " m";
+    if (isNaN(naparsovanoVpravo)) {
+      naparsovanoVpravo = null;
     }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function miNaKm() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
+    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
+      vysledek = naparsovanoVlevo * 0.3048;
+      vpravo.value = vysledek;
+    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
+      vysledek = naparsovanoVpravo / 0.3048;
+      vlevo.value = vysledek;
+    } else if (naparsovanoVpravo == null && naparsovanoVlevo == null) {
       upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 1.609344;
-      upozorneni.innerHTML = naparsovano + " mi je " + vysledek + " km";
     }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function nmNaKm() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 1.852001;
-      upozorneni.innerHTML = naparsovano + " n. m. je " + vysledek + " km";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function lyNaKm() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * svetelny;
-      upozorneni.innerHTML = naparsovano + " ly je " + vysledek + " km";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function auNaKm() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * astronomicka;
-      upozorneni.innerHTML = naparsovano + " AU je " + vysledek + " km";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function cmNaIn() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 2.54;
-      upozorneni.innerHTML = naparsovano + " cm je " + vysledek + " in";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function mNaFt() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 0.3048;
-      upozorneni.innerHTML = naparsovano + " m je " + vysledek + " ft";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function mNaYd() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 0.9144;
-      upozorneni.innerHTML = naparsovano + " m je " + vysledek + " yd";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function kmNaMi() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 1.609344;
-      upozorneni.innerHTML = naparsovano + " km je " + vysledek + " mi";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function kmNaNm() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 1.852001;
-      upozorneni.innerHTML = naparsovano + " km je " + vysledek + " n. m.";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function kmNaLy() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / svetelny;
-      upozorneni.innerHTML = naparsovano + " km je " + vysledek + " ly";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function kmNaAu() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / astronomicka;
-      upozorneni.innerHTML = naparsovano + " km je " + vysledek + " AU";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function ozNaG() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 28.34952;
-      upozorneni.innerHTML = naparsovano + " oz je " + vysledek + " g";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function lbNaKg() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 0.4535924;
-      upozorneni.innerHTML = naparsovano + " lb je " + vysledek + " kg";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function gNaOz() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 28.34952;
-      upozorneni.innerHTML = naparsovano + " g je " + vysledek + " oz";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function kgNaLb() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 0.4535924;
-      upozorneni.innerHTML = naparsovano + " kg je " + vysledek + " lb";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function usaGalNaL() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 3.7854;
-      upozorneni.innerHTML = naparsovano + " USA gal je " + vysledek + " l";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function ukGalNaL() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 4.54609;
-      upozorneni.innerHTML = naparsovano + " UK gal je " + vysledek + " l";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function usaPtNaL() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 0.47317648;
-      upozorneni.innerHTML = naparsovano + " USA pt je " + vysledek + " l";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function ukPtNaL() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 0.56826125;
-      upozorneni.innerHTML = naparsovano + " UK pt je " + vysledek + " l";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function lNaUsaGal() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 3.7854;
-      upozorneni.innerHTML = naparsovano + " l je " + vysledek + " USA gal";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function lNaUkGal() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 4.54609;
-      upozorneni.innerHTML = naparsovano + " l je " + vysledek + " UK gal";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function lNaUsaPt() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 0.47317648;
-      upozorneni.innerHTML = naparsovano + " l je " + vysledek + " USA pt";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function lNaUkPt() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 0.56826125;
-      upozorneni.innerHTML = naparsovano + " l je " + vysledek + " UK pt";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function acreNaHa() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 0.404686;
-      upozorneni.innerHTML = naparsovano + " acre je " + vysledek + " ha";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function sqinNaSqcm() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 6.4516;
-      upozorneni.innerHTML = naparsovano + " sq. in je " + vysledek + " cm²";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function sqftNaSqdm() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 9.290304;
-      upozorneni.innerHTML = naparsovano + " sq. ft je " + vysledek + " dm²";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function sqydNaSqm() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 0.8361274;
-      upozorneni.innerHTML = naparsovano + " sq. yd je " + vysledek + " m²";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function sqmileNaSqkm() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 2.5899881;
-      upozorneni.innerHTML = naparsovano + " mile² je " + vysledek + " km²";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function haNaAcre() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 0.404686;
-      upozorneni.innerHTML = naparsovano + " ha je " + vysledek + " acre";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function sqcmNaSqin() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 6.4516;
-      upozorneni.innerHTML = naparsovano + " cm² je " + vysledek + " sq. in";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function sqdmNaSqft() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 9.290304;
-      upozorneni.innerHTML = naparsovano + " dm² je " + vysledek + " sq. ft";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function sqmNaSqyd() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 0.8361274;
-      upozorneni.innerHTML = naparsovano + " m² je " + vysledek + " sq. yd";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function sqkmNaSqmile() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 2.5899881;
-      upozorneni.innerHTML = naparsovano + " km² je " + vysledek + " mile²";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function msNaKmh() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 3.6;
-      upozorneni.innerHTML = naparsovano + " m/s je " + vysledek + " km/h";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function mphNaKmh() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 1.609344;
-      upozorneni.innerHTML = naparsovano + " MPH je " + vysledek + " km/h";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function knNaKmh() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 1.852001;
-      upozorneni.innerHTML = naparsovano + " kn je " + vysledek + " km/h";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function maNaKmh() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano * 1225.044;
-      upozorneni.innerHTML = naparsovano + " Ma je " + vysledek + " km/h";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function kmhNaMs() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 3.6;
-      upozorneni.innerHTML = naparsovano + " km/h je " + vysledek + " m/s";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function kmhNaMph() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 1.609344;
-      upozorneni.innerHTML = naparsovano + " km/h je " + vysledek + " MPH";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function kmhNaKn() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 1.852001;
-      upozorneni.innerHTML = naparsovano + " km/h je " + vysledek + " kn";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function kmhNaMa() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano / 1225.044;
-      upozorneni.innerHTML = naparsovano + " km/h je " + vysledek + " Ma";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function fNaC() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      pomocnyVypocet = naparsovano - 32;
-      vysledek = pomocnyVypocet / 1.8;
-      upozorneni.innerHTML = naparsovano + " °F je " + vysledek + " °C";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function kNaC() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano - 273.15;
-      upozorneni.innerHTML = naparsovano + " K je " + vysledek + " °C";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function cNaF() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      pomocnyVypocet = 1.8 * naparsovano;
-      vysledek = pomocnyVypocet + 32;
-      upozorneni.innerHTML = naparsovano + " °C je " + vysledek + " °F";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
-  }
-
-  function cNaK() {
-    inpHodnota = inpHodnota.value.trim();
-    naparsovano = parseFloat(inpHodnota);
-    if (isNaN(naparsovano) || naparsovano == null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    } else {
-      vysledek = naparsovano + 273.15;
-      upozorneni.innerHTML = naparsovano + " °C je " + vysledek + " K";
-    }
-    inpHodnota = document.getElementById("inpHodnota");
-    naparsovano = null;
+    naparsovanoVlevo = null;
+    naparovanoVpravo = null;
   }
 };
