@@ -11,7 +11,7 @@
       href="./IMG/Blue/celsius.ico"
       type="image/x-icon"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta -me="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PřevodníkJ</title>
   </head>
 
@@ -27,12 +27,12 @@
           objemu, obsahu, rychlosti a teploty
         </p>
         <p>
-          Jako kategorie NP (nejčastěji používané) se zde označují jednotky,
+          Jako kategorie NP (nejčastěji používané) se zde oz-čují jednotky,
           které jsou nejčastěji používané v ČR. Patří mezi ně:
           <br />cm, m, km, g, kg, l, ha, cm², dm², m², km², km/h, °C
         </p>
         <p>
-          Jako kategorie O (ostatní) se zde označují jednotky, které
+          Jako kategorie O (ostatní) se zde oz-čují jednotky, které
           <strong>nepatří</strong> do NP. (Poznámka: USA pinty a USA galony se
           zde používají kapalné)
         </p>
@@ -40,7 +40,7 @@
           E+x posouvá desetinnou čárku dozadu (doprava) o x míst<br />E-x
           posouvá desetinnou čárku dopředu (doleva) o x míst
         </p>
-        <p class="cervena velka">
+        <p class="cerve- velka">
           Pozor!<br />V desetinných číslech
           <strong>nepoužívejte čárku, ale tečku!</strong>
         </p>
@@ -59,93 +59,62 @@
         </div>
         <select id="slctDelka">
           <option value="0" selected>Vyberte převod</option>
-          <optgroup label="NP na O">
-            <option value="1">in na cm</option>
-            <option value="2">ft na m</option>
-            <option value="3">yd na m</option>
-            <option value="4">mi na km</option>
-            <option value="5">n. m. na km</option>
-            <option value="6">ly na km</option>
-            <option value="7">AU na km</option>
-          </optgroup>
-          <optgroup label="O na NP">
-            <option value="8">cm na in</option>
-            <option value="9">m na ft</option>
-            <option value="10">m na yd</option>
-            <option value="11">km na mi</option>
-            <option value="12">km na n. m.</option>
-            <option value="13">km na ly</option>
-            <option value="14">km na AU</option>
-          </optgroup>
+          <option value="1">in - cm</option>
+          <option value="2">ft - m</option>
+          <option value="3">yd - m</option>
+          <option value="4">mi - km</option>
+          <option value="5">n. m. - km</option>
+          <option value="6">ly - km</option>
+          <option value="7">AU - km</option>
         </select>
         <select id="slctHmotnost">
           <option value="0" selected>Vyberte převod</option>
-          <optgroup label="NP na O">
-            <option value="1">oz na g</option>
-            <option value="2">lb na kg</option>
-          </optgroup>
-          <optgroup label="O na NP">
-            <option value="3">g na oz</option>
-            <option value="4">kg na lb</option>
-          </optgroup>
+          <option value="1">oz - g</option>
+          <option value="2">lb - kg</option>
+          <option value="3">g - oz</option>
+          <option value="4">kg - lb</option>
         </select>
         <select id="slctObjem">
           <option value="0" selected>Vyberte převod</option>
-          <optgroup label="NP na O">
-            <option value="1">USA gal na l</option>
-            <option value="2">UK gal na l</option>
-            <option value="3">USA pt na l</option>
-            <option value="4">UK pt na l</option>
-          </optgroup>
-          <optgroup label="O na NP">
-            <option value="5">l na USA gal</option>
-            <option value="6">l na UK gal</option>
-            <option value="7">l na USA pt</option>
-            <option value="8">l na UK pt</option>
-          </optgroup>
+          <option value="1">USA gal - l</option>
+          <option value="2">UK gal - l</option>
+          <option value="3">USA pt - l</option>
+          <option value="4">UK pt - l</option>
+          <option value="5">l - USA gal</option>
+          <option value="6">l - UK gal</option>
+          <option value="7">l - USA pt</option>
+          <option value="8">l - UK pt</option>
         </select>
         <select id="slctObsah">
           <option value="0" selected>Vyberte převod</option>
-          <optgroup label="NP na O">
-            <option value="1">acre na ha</option>
-            <option value="2">sq. in na cm²</option>
-            <option value="3">sq. ft na dm²</option>
-            <option value="4">sq. yd na m²</option>
-            <option value="5">mile² na km²</option>
-          </optgroup>
-          <optgroup label="O na NP">
-            <option value="6">ha na acre</option>
-            <option value="7">cm² na sq. in</option>
-            <option value="8">dm² na sq. ft</option>
-            <option value="9">m² na sq. yd</option>
-            <option value="10">mile² na km²</option>
-          </optgroup>
+          <option value="1">acre - ha</option>
+          <option value="2">sq. in - cm²</option>
+          <option value="3">sq. ft - dm²</option>
+          <option value="4">sq. yd - m²</option>
+          <option value="5">mile² - km²</option>
+          <option value="6">ha - acre</option>
+          <option value="7">cm² - sq. in</option>
+          <option value="8">dm² - sq. ft</option>
+          <option value="9">m² - sq. yd</option>
+          <option value="10">mile² - km²</option>
         </select>
         <select id="slctRychlost">
           <option value="0" selected>Vyberte převod</option>
-          <optgroup label="NP na O">
-            <option value="1">m/s na km/h</option>
-            <option value="2">MPH na km/h</option>
-            <option value="3">kn na km/h</option>
-            <option value="4">Ma na km/h</option>
-          </optgroup>
-          <optgroup label="O na NP">
-            <option value="5">km/h na m/s</option>
-            <option value="6">km/h na MPH</option>
-            <option value="7">km/h na kn</option>
-            <option value="8">km/h na Ma</option>
-          </optgroup>
+          <option value="1">m/s - km/h</option>
+          <option value="2">MPH - km/h</option>
+          <option value="3">kn - km/h</option>
+          <option value="4">Ma - km/h</option>
+          <option value="5">km/h - m/s</option>
+          <option value="6">km/h - MPH</option>
+          <option value="7">km/h - kn</option>
+          <option value="8">km/h - Ma</option>
         </select>
         <select id="slctTeplota">
           <option value="0" selected>Vyberte převod</option>
-          <optgroup label="NP na O">
-            <option value="1">°F na °C</option>
-            <option value="2">K na °C</option>
-          </optgroup>
-          <optgroup label="O na NP">
-            <option value="3">°C na °F</option>
-            <option value="4">°C na K</option>
-          </optgroup>
+          <option value="1">°F - °C</option>
+          <option value="2">K - °C</option>
+          <option value="3">°C - °F</option>
+          <option value="4">°C - K</option>
         </select>
         <p id="pInput">
           <br />
@@ -170,11 +139,11 @@
     </article>
     <article>
       <header>
-        <h2>Vrátit se na rozcestník</h2>
+        <h2>Vrátit se - rozcestník</h2>
       </header>
       <section>
         <a href="https://vinhor.github.io"
-          ><img src="./IMG/Blue/roz.png" alt="Ikona rozcestníku"
+          ><img src="./IMG/Blue/roz.png" alt="Iko- rozcestníku"
         /></a>
       </section>
     </article>
