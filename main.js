@@ -21,9 +21,6 @@ window.onload = function () {
   let br5 = document.createElement("br");
   let lvlevo = document.getElementById("lvlevo");
   let lvpravo = document.getElementById("lvpravo");
-  let pomocnyVypocet;
-  let svetelny = 9.46073e12;
-  let astronomicka = 1.495979e8;
   let vysledek;
   let naparsovanoVlevo;
   let naparsovanoVpravo;
