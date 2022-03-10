@@ -169,6 +169,8 @@ window.onload = function () {
   };
 
   slctDelka.onchange = function () {
+    vlevo.value = "";
+    vpravo.value = "";
     if (slctDelka.value == 0) {
       lvlevo.innerHTML = "";
       lvpravo.innerHTML = "";
@@ -197,6 +199,8 @@ window.onload = function () {
   };
 
   slctHmotnost.onchange = function () {
+    vlevo.value = "";
+    vpravo.value = "";
     if (slctHmotnost.value == 0) {
       lvlevo.innerHTML = "";
       lvpravo.innerHTML = "";
@@ -206,6 +210,27 @@ window.onload = function () {
     } else if (slctHmotnost.value == 2) {
       lvlevo.innerHTML = "lb";
       lvpravo.innerHTML = "kg";
+    }
+  };
+
+  slctObjem.onchange = function () {
+    vlevo.value = "";
+    vpravo.value = "";
+    if (slctObjem.value == 0) {
+      lvlevo.innerHTML = "";
+      lvpravo.innerHTML = "";
+    } else if (slctObjem.value == 1) {
+      lvlevo.innerHTML = "USA gal";
+      lvpravo.innerHTML = "l";
+    } else if (slctObjem.value == 2) {
+      lvlevo.innerHTML = "UK gal";
+      lvpravo.innerHTML = "l";
+    } else if (slctObjem.value == 3) {
+      lvlevo.innerHTML = "USA pt";
+      lvpravo.innerHTML = "l";
+    } else if (slctObjem.value == 4) {
+      lvlevo.innerHTML = "UK pt";
+      lvpravo.innerHTML = "l";
     }
   };
 
@@ -545,6 +570,114 @@ window.onload = function () {
         upozorneni.innerHTML = "Nezadali jste číslo!";
       } else {
         vysledek = naparsovanoVpravo / 0.4535924;
+        vlevo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    }
+  }
+
+  function usaGalL() {
+    naparsovanoVlevo = parseFloat(vlevo.value.trim());
+    naparsovanoVpravo = parseFloat(vpravo.value.trim());
+    if (isNaN(naparsovanoVlevo)) {
+      naparsovanoVlevo = null;
+    } else if (isNaN(naparsovanoVpravo)) {
+      naparsovanoVpravo = null;
+    }
+    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
+      if (isNaN(naparsovanoVlevo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVlevo * 3.7854;
+        vpravo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
+      if (isNaN(naparsovanoVpravo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVpravo / 3.7854;
+        vlevo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    }
+  }
+
+  function ukGalL() {
+    naparsovanoVlevo = parseFloat(vlevo.value.trim());
+    naparsovanoVpravo = parseFloat(vpravo.value.trim());
+    if (isNaN(naparsovanoVlevo)) {
+      naparsovanoVlevo = null;
+    } else if (isNaN(naparsovanoVpravo)) {
+      naparsovanoVpravo = null;
+    }
+    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
+      if (isNaN(naparsovanoVlevo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVlevo * 4.54609;
+        vpravo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
+      if (isNaN(naparsovanoVpravo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVpravo / 4.54609;
+        vlevo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    }
+  }
+
+  function usaPtL() {
+    naparsovanoVlevo = parseFloat(vlevo.value.trim());
+    naparsovanoVpravo = parseFloat(vpravo.value.trim());
+    if (isNaN(naparsovanoVlevo)) {
+      naparsovanoVlevo = null;
+    } else if (isNaN(naparsovanoVpravo)) {
+      naparsovanoVpravo = null;
+    }
+    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
+      if (isNaN(naparsovanoVlevo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVlevo * 0.4731765;
+        vpravo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
+      if (isNaN(naparsovanoVpravo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVpravo / 0.4731765;
+        vlevo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    }
+  }
+
+  function ukPtL() {
+    naparsovanoVlevo = parseFloat(vlevo.value.trim());
+    naparsovanoVpravo = parseFloat(vpravo.value.trim());
+    if (isNaN(naparsovanoVlevo)) {
+      naparsovanoVlevo = null;
+    } else if (isNaN(naparsovanoVpravo)) {
+      naparsovanoVpravo = null;
+    }
+    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
+      if (isNaN(naparsovanoVlevo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVlevo * 0.5682612;
+        vpravo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
+      if (isNaN(naparsovanoVpravo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVpravo / 0.5682612;
         vlevo.value = vysledek;
       }
     } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
