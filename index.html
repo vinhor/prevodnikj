@@ -16,9 +16,90 @@
   </head>
 
   <body>
-    <h1 class="chyba">:( Renovace</h1>
-    <p class="cervena velka">Omlouváme se, tato stránka se renovuje</p>
-    <article class="cerveny-article">
+    <h1>PřevodníkJ</h1>
+    <article>
+      <header>
+        <h2>Základní informace</h2>
+      </header>
+      <section>
+        <p>
+          PřevodníkJ je aplikace pro převádění jednotek <br />délky, hmotnosti,
+          objemu, obsahu, rychlosti a teploty
+        </p>
+        <p>Poznámka: USA pinty a USA galony se zde používají kapalné</p>
+        <p>
+          E+x posouvá desetinnou čárku dozadu (doprava) o x míst<br />E-x
+          posouvá desetinnou čárku dopředu (doleva) o x míst
+        </p>
+      </section>
+    </article>
+    <article class="velky-ramecek">
+      <header><h2>Převody</h2></header>
+      <section>
+        <div id="divt" class="tlacitka">
+          <button id="btnDelka" class="one neaktivni">Délka</button
+          ><button id="btnHmotnost" class="two neaktivni">Hmotnost</button>
+          <button id="btnObjem" class="three neaktivni">Objem</button>
+          <button id="btnObsah" class="four neaktivni">Obsah</button>
+          <button id="btnRychlost" class="five neaktivni">Rychlost</button
+          ><button id="btnTeplota" class="six neaktivni">Teplota</button>
+        </div>
+        <select id="slctDelka">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">in - cm</option>
+          <option value="2">ft - m</option>
+          <option value="3">yd - m</option>
+          <option value="4">mi - km</option>
+          <option value="5">n. m. - km</option>
+          <option value="6">ly - km</option>
+          <option value="7">AU - km</option>
+        </select>
+        <select id="slctHmotnost">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">oz - g</option>
+          <option value="2">lb - kg</option>
+        </select>
+        <select id="slctObjem">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">USA gal - l</option>
+          <option value="2">UK gal - l</option>
+          <option value="3">USA pt - l</option>
+          <option value="4">UK pt - l</option>
+        </select>
+        <select id="slctObsah">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">acre - ha</option>
+          <option value="2">sq. in - cm²</option>
+          <option value="3">sq. ft - dm²</option>
+          <option value="4">sq. yd - m²</option>
+          <option value="5">mile² - km²</option>
+        </select>
+        <select id="slctRychlost">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">m/s - km/h</option>
+          <option value="2">MPH - km/h</option>
+          <option value="3">kn - km/h</option>
+          <option value="4">Ma - km/h</option>
+        </select>
+        <select id="slctTeplota">
+          <option value="0" selected>Vyberte převod</option>
+          <option value="1">°F - °C</option>
+          <option value="2">K - °C</option>
+        </select>
+        <p id="pInput">
+          <br />
+          <input type="text" id="vlevo" />
+          <label for="vlevo" id="lvlevo"></label> =
+          <input type="text" id="vpravo" />
+          <label for="vpravo" id="lvpravo"></label>
+          <br />
+          <button id="btnPrevod">Převést</button>
+          <br />
+          <span id="upozorneni"></span>
+        </p>
+      </section>
+    </article>
+    <article>
       <header>
         <h2>Otevřít GitHubovou stránku projektu</h2>
       </header>
