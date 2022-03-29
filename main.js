@@ -5,12 +5,14 @@ window.onload = function () {
   let slctObsah = document.getElementById("slctObsah");
   let slctRychlost = document.getElementById("slctRychlost");
   let slctTeplota = document.getElementById("slctTeplota");
+  let slctMena = document.getElementById("slctMena");
   let btnDelka = document.getElementById("btnDelka");
   let btnHmotnost = document.getElementById("btnHmotnost");
   let btnObjem = document.getElementById("btnObjem");
   let btnObsah = document.getElementById("btnObsah");
   let btnRychlost = document.getElementById("btnRychlost");
   let btnTeplota = document.getElementById("btnTeplota");
+  let btnMena = document.getElementById("btnMena");
   let upozorneni = document.getElementById("upozorneni");
   let btnPrevod = document.getElementById("btnPrevod");
   let divt = document.getElementById("divt");
@@ -25,12 +27,32 @@ window.onload = function () {
   let naparsovanoVlevo;
   let naparsovanoVpravo;
 
+  let requestUrlEur = "https://api.exchangerate.host/latest?symbols=CZK,EUR";
+  let requestEur = new XMLHttpRequest();
+  requestEur.responseType = "json";
+  requestEur.onload = () => {
+    console.log(requestEur.response);
+  };
+  requestEur.open("GET", requestUrlEur);
+  requestEur.send();
+
+  let requestUrlUsd =
+    "https://api.exchangerate.host/latest?base=USD&symbols=CZK,USD";
+  let requestUsd = new XMLHttpRequest();
+  requestUsd.responseType = "json";
+  requestUsd.onload = () => {
+    console.log(requestUsd.response);
+  };
+  requestUsd.open("GET", requestUrlUsd);
+  requestUsd.send();
+
   slctDelka.value = 0;
   slctHmotnost.value = 0;
   slctObjem.value = 0;
   slctObsah.value = 0;
   slctRychlost.value = 0;
   slctTeplota.value = 0;
+  slctMena.value = 0;
 
   vlevo.value = null;
   vpravo.value = null;
@@ -61,12 +83,14 @@ window.onload = function () {
     slctObsah.style.display = "none";
     slctRychlost.style.display = "none";
     slctTeplota.style.display = "none";
+    slctMena.style.display = "none";
     btnDelka.className = "one aktivni";
     btnHmotnost.className = "two neaktivni";
     btnObjem.className = "three neaktivni";
     btnObsah.className = "four neaktivni";
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
+    btnMena.className = "seven neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
@@ -80,12 +104,14 @@ window.onload = function () {
     slctObsah.style.display = "none";
     slctRychlost.style.display = "none";
     slctTeplota.style.display = "none";
+    slctMena.style.display = "none";
     btnDelka.className = "one neaktivni";
     btnHmotnost.className = "two aktivni";
     btnObjem.className = "three neaktivni";
     btnObsah.className = "four neaktivni";
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
+    btnMena.className = "seven neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
@@ -99,12 +125,14 @@ window.onload = function () {
     slctObsah.style.display = "none";
     slctRychlost.style.display = "none";
     slctTeplota.style.display = "none";
+    slctMena.style.display = "none";
     btnDelka.className = "one neaktivni";
     btnHmotnost.className = "two neaktivni";
     btnObjem.className = "three aktivni";
     btnObsah.className = "four neaktivni";
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
+    btnMena.className = "seven neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
@@ -118,12 +146,14 @@ window.onload = function () {
     slctObsah.style.display = "inline";
     slctRychlost.style.display = "none";
     slctTeplota.style.display = "none";
+    slctMena.style.display = "none";
     btnDelka.className = "one neaktivni";
     btnHmotnost.className = "two neaktivni";
     btnObjem.className = "three neaktivni";
     btnObsah.className = "four aktivni";
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
+    btnMena.className = "seven neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
@@ -137,12 +167,14 @@ window.onload = function () {
     slctObsah.style.display = "none";
     slctRychlost.style.display = "inline";
     slctTeplota.style.display = "none";
+    slctMena.style.display = "none";
     btnDelka.className = "one neaktivni";
     btnHmotnost.className = "two neaktivni";
     btnObjem.className = "three neaktivni";
     btnObsah.className = "four neaktivni";
     btnRychlost.className = "five aktivni";
     btnTeplota.className = "six neaktivni";
+    btnMena.className = "seven neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
       btnPrevod.onclick = vyberRychlost;
@@ -156,16 +188,39 @@ window.onload = function () {
     slctObsah.style.display = "none";
     slctRychlost.style.display = "none";
     slctTeplota.style.display = "inline";
+    slctMena.style.display = "none";
     btnDelka.className = "one neaktivni";
     btnHmotnost.className = "two neaktivni";
     btnObjem.className = "three neaktivni";
     btnObsah.className = "four neaktivni";
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six aktivni";
+    btnMena.className = "seven neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
     btnPrevod.onclick = vyberTeplota;
+  };
+
+  btnMena.onclick = function () {
+    slctDelka.style.display = "none";
+    slctHmotnost.style.display = "none";
+    slctObjem.style.display = "none";
+    slctObsah.style.display = "none";
+    slctRychlost.style.display = "none";
+    slctTeplota.style.display = "none";
+    slctMena.style.display = "inline";
+    btnDelka.className = "one neaktivni";
+    btnHmotnost.className = "two neaktivni";
+    btnObjem.className = "three neaktivni";
+    btnObsah.className = "four neaktivni";
+    btnRychlost.className = "five neaktivni";
+    btnTeplota.className = "six neaktivni";
+    btnMena.className = "seven aktivni";
+    if ((pInput.style.display = "none")) {
+      pInput.style.display = "inline";
+    }
+    btnPrevod.onclick = vyberMena;
   };
 
   slctDelka.onchange = function () {
@@ -284,6 +339,19 @@ window.onload = function () {
     }
   };
 
+  slctMena.onchange = function () {
+    if (slctMena.value == 0) {
+      lvlevo.innerHTML = "";
+      lvpravo.innerHTML = "";
+    } else if (slctMena.value == 1) {
+      lvlevo.innerHTML = "€";
+      lvpravo.innerHTML = "Kč";
+    } else if (slctMena.value == 2) {
+      lvlevo.innerHTML = "$";
+      lvpravo.innerHTML = "Kč";
+    }
+  };
+
   function vyberDelka() {
     upozorneni.innerHTML = "";
     if (slctDelka.value == 0) {
@@ -371,6 +439,17 @@ window.onload = function () {
       fC();
     } else if (slctTeplota.value == 2) {
       kC();
+    }
+  }
+
+  function vyberMena() {
+    upozorneni.innerHTML = "";
+    if (slctMena.value == 0) {
+      upozorneni.innerHTML = "Nevybrali jste si převod!";
+    } else if (slctMena.value == 1) {
+      eurKc();
+    } else if (slctMena.value == 2) {
+      usdKc();
     }
   }
 
@@ -1025,6 +1104,60 @@ window.onload = function () {
         upozorneni.innerHTML = "Nezadali jste číslo!";
       } else {
         vysledek = naparsovanoVpravo + 273.15;
+        vlevo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    }
+  }
+
+  function eurKc() {
+    naparsovanoVlevo = parseFloat(vlevo.value.trim());
+    naparsovanoVpravo = parseFloat(vpravo.value.trim());
+    if (isNaN(naparsovanoVlevo)) {
+      naparsovanoVlevo = null;
+    } else if (isNaN(naparsovanoVpravo)) {
+      naparsovanoVpravo = null;
+    }
+    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
+      if (isNaN(naparsovanoVlevo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVlevo * requestEur.response.rates.CZK;
+        vpravo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
+      if (isNaN(naparsovanoVpravo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVpravo / requestEur.response.rates.CZK;
+        vlevo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
+      upozorneni.innerHTML = "Nezadali jste číslo!";
+    }
+  }
+
+  function usdKc() {
+    naparsovanoVlevo = parseFloat(vlevo.value.trim());
+    naparsovanoVpravo = parseFloat(vpravo.value.trim());
+    if (isNaN(naparsovanoVlevo)) {
+      naparsovanoVlevo = null;
+    } else if (isNaN(naparsovanoVpravo)) {
+      naparsovanoVpravo = null;
+    }
+    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
+      if (isNaN(naparsovanoVlevo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVlevo * requestUsd.response.rates.CZK;
+        vpravo.value = vysledek;
+      }
+    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
+      if (isNaN(naparsovanoVpravo)) {
+        upozorneni.innerHTML = "Nezadali jste číslo!";
+      } else {
+        vysledek = naparsovanoVpravo / requestUsd.response.rates.CZK;
         vlevo.value = vysledek;
       }
     } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
