@@ -46,6 +46,7 @@ window.onload = function () {
   const mphkmh = new Prevod(1.609344);
   const knkmh = new Prevod(1.852001);
   const makmh = new Prevod(1225.044);
+  const teplota = new Teplota();
 
   const requestURL =
     "https://api.exchangerate.host/latest?base=CZK&symbols=EUR,USD";
@@ -53,6 +54,8 @@ window.onload = function () {
   request.responseType = "json";
   request.onload = () => {
     console.log(request.response);
+    eurkc = new Prevod(request.response.rates.EUR);
+    usdkc = new Prevod(request.response.rates.USD);
   };
   request.open("GET", requestURL);
   request.send();
@@ -494,9 +497,9 @@ window.onload = function () {
     if (slctTeplota.value == 0) {
       upozorneni.innerHTML = "Nevybrali jste si převod!";
     } else if (slctTeplota.value == 1) {
-      fC();
+      teplota.f();
     } else if (slctTeplota.value == 2) {
-      kC();
+      teplota.k();
     }
   }
 
@@ -505,117 +508,9 @@ window.onload = function () {
     if (slctMena.value == 0) {
       upozorneni.innerHTML = "Nevybrali jste si převod!";
     } else if (slctMena.value == 1) {
-      eurKc();
+      eurkc.meny();
     } else if (slctMena.value == 2) {
-      usdKc();
-    }
-  }
-
-  function fC() {
-    naparsovanoVlevo = parseFloat(vlevo.value.trim());
-    naparsovanoVpravo = parseFloat(vpravo.value.trim());
-    if (isNaN(naparsovanoVlevo)) {
-      naparsovanoVlevo = null;
-    } else if (isNaN(naparsovanoVpravo)) {
-      naparsovanoVpravo = null;
-    }
-    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
-      if (isNaN(naparsovanoVlevo)) {
-        upozorneni.innerHTML = "Nezadali jste číslo!";
-      } else {
-        vysledek = (naparsovanoVlevo - 32) / 1.8;
-        vpravo.value = vysledek;
-      }
-    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
-      if (isNaN(naparsovanoVpravo)) {
-        upozorneni.innerHTML = "Nezadali jste číslo!";
-      } else {
-        vysledek = 1.8 * naparsovanoVpravo + 32;
-        vlevo.value = vysledek;
-      }
-    } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    }
-  }
-
-  function kC() {
-    naparsovanoVlevo = parseFloat(vlevo.value.trim());
-    naparsovanoVpravo = parseFloat(vpravo.value.trim());
-    if (isNaN(naparsovanoVlevo)) {
-      naparsovanoVlevo = null;
-    } else if (isNaN(naparsovanoVpravo)) {
-      naparsovanoVpravo = null;
-    }
-    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
-      if (isNaN(naparsovanoVlevo)) {
-        upozorneni.innerHTML = "Nezadali jste číslo!";
-      } else {
-        vysledek = naparsovanoVlevo - 273.15;
-        vpravo.value = vysledek;
-      }
-    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
-      if (isNaN(naparsovanoVpravo)) {
-        upozorneni.innerHTML = "Nezadali jste číslo!";
-      } else {
-        vysledek = naparsovanoVpravo + 273.15;
-        vlevo.value = vysledek;
-      }
-    } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    }
-  }
-
-  function eurKc() {
-    naparsovanoVlevo = parseFloat(vlevo.value.trim());
-    naparsovanoVpravo = parseFloat(vpravo.value.trim());
-    if (isNaN(naparsovanoVlevo)) {
-      naparsovanoVlevo = null;
-    } else if (isNaN(naparsovanoVpravo)) {
-      naparsovanoVpravo = null;
-    }
-    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
-      if (isNaN(naparsovanoVlevo)) {
-        upozorneni.innerHTML = "Nezadali jste číslo!";
-      } else {
-        vysledek = naparsovanoVlevo / request.response.rates.EUR;
-        vpravo.value = vysledek;
-      }
-    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
-      if (isNaN(naparsovanoVpravo)) {
-        upozorneni.innerHTML = "Nezadali jste číslo!";
-      } else {
-        vysledek = naparsovanoVpravo * request.response.rates.EUR;
-        vlevo.value = vysledek;
-      }
-    } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
-    }
-  }
-
-  function usdKc() {
-    naparsovanoVlevo = parseFloat(vlevo.value.trim());
-    naparsovanoVpravo = parseFloat(vpravo.value.trim());
-    if (isNaN(naparsovanoVlevo)) {
-      naparsovanoVlevo = null;
-    } else if (isNaN(naparsovanoVpravo)) {
-      naparsovanoVpravo = null;
-    }
-    if (naparsovanoVlevo !== null && naparsovanoVpravo === null) {
-      if (isNaN(naparsovanoVlevo)) {
-        upozorneni.innerHTML = "Nezadali jste číslo!";
-      } else {
-        vysledek = naparsovanoVlevo / request.response.rates.USD;
-        vpravo.value = vysledek;
-      }
-    } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
-      if (isNaN(naparsovanoVpravo)) {
-        upozorneni.innerHTML = "Nezadali jste číslo!";
-      } else {
-        vysledek = naparsovanoVpravo * request.response.rates.USD;
-        vlevo.value = vysledek;
-      }
-    } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
-      upozorneni.innerHTML = "Nezadali jste číslo!";
+      usdkc.meny();
     }
   }
 };
