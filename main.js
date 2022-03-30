@@ -23,6 +23,7 @@ window.onload = function () {
   let br4 = document.createElement("br");
   let br5 = document.createElement("br");
   let br6 = document.createElement("br");
+  let br7 = document.createElement("br");
   let lvlevo = document.getElementById("lvlevo");
   let lvpravo = document.getElementById("lvpravo");
 
@@ -90,6 +91,7 @@ window.onload = function () {
     divt.insertBefore(br4, btnObsah);
     divt.insertBefore(br5, btnRychlost);
     divt.insertBefore(br6, btnVykon);
+    divt.insertBefore(br7, btnMena);
   } else {
     divt.className = "tlacitka";
   }
