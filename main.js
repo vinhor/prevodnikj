@@ -13,6 +13,7 @@ window.onload = function () {
   let btnRychlost = document.getElementById("btnRychlost");
   let btnTeplota = document.getElementById("btnTeplota");
   let btnMena = document.getElementById("btnMena");
+  let btnVykon = document.getElementById("btnVykon");
   upozorneni = document.getElementById("upozorneni");
   let btnPrevod = document.getElementById("btnPrevod");
   let divt = document.getElementById("divt");
@@ -21,6 +22,7 @@ window.onload = function () {
   let br3 = document.createElement("br");
   let br4 = document.createElement("br");
   let br5 = document.createElement("br");
+  let br6 = document.createElement("br");
   let lvlevo = document.getElementById("lvlevo");
   let lvpravo = document.getElementById("lvpravo");
 
@@ -47,6 +49,7 @@ window.onload = function () {
   const knkmh = new Prevod(1.852001);
   const makmh = new Prevod(1225.044);
   const teplota = new Teplota();
+  const kwhp = new Prevod(0.7456999);
 
   const requestURL =
     "https://api.exchangerate.host/latest?base=CZK&symbols=EUR,USD";
@@ -86,6 +89,7 @@ window.onload = function () {
     divt.insertBefore(br3, btnObjem);
     divt.insertBefore(br4, btnObsah);
     divt.insertBefore(br5, btnRychlost);
+    divt.insertBefore(br6, btnVykon);
   } else {
     divt.className = "tlacitka";
   }
@@ -110,6 +114,7 @@ window.onload = function () {
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
+    btnVykon.className = "eight neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
@@ -136,6 +141,7 @@ window.onload = function () {
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
+    btnVykon.className = "eight neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
@@ -162,6 +168,7 @@ window.onload = function () {
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
+    btnVykon.className = "eight neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
@@ -188,6 +195,7 @@ window.onload = function () {
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
+    btnVykon.className = "eight neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
@@ -214,6 +222,7 @@ window.onload = function () {
     btnRychlost.className = "five aktivni";
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
+    btnVykon.className = "eight neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
       btnPrevod.onclick = vyberRychlost;
@@ -240,6 +249,7 @@ window.onload = function () {
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six aktivni";
     btnMena.className = "seven neaktivni";
+    btnVykon.className = "eight neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
@@ -266,10 +276,40 @@ window.onload = function () {
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven aktivni";
+    btnVykon.className = "eight neaktivni";
     if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
     btnPrevod.onclick = vyberMena;
+  };
+
+  btnVykon.onclick = function () {
+    lvlevo.innerHTML = null;
+    lvpravo.innerHTML = null;
+    vlevo.value = null;
+    vpravo.value = null;
+    slctMena.value = 0;
+    slctDelka.style.display = "none";
+    slctHmotnost.style.display = "none";
+    slctObjem.style.display = "none";
+    slctObsah.style.display = "none";
+    slctRychlost.style.display = "none";
+    slctTeplota.style.display = "none";
+    slctMena.style.display = "none";
+    btnDelka.className = "one neaktivni";
+    btnHmotnost.className = "two neaktivni";
+    btnObjem.className = "three neaktivni";
+    btnObsah.className = "four neaktivni";
+    btnRychlost.className = "five neaktivni";
+    btnTeplota.className = "six neaktivni";
+    btnMena.className = "seven neaktivni";
+    btnVykon.className = "eight aktivni";
+    if ((pInput.style.display = "none")) {
+      pInput.style.display = "inline";
+    }
+    lvlevo.innerHTML = "kW";
+    lvpravo.innerHTML = "HP";
+    btnPrevod.onclick = vyberVykon;
   };
 
   slctDelka.onchange = function () {
@@ -512,5 +552,10 @@ window.onload = function () {
     } else if (slctMena.value == 2) {
       usdkc.meny();
     }
+  }
+
+  function vyberVykon() {
+    upozorneni.innerHTML = "";
+    kwhp.prevod();
   }
 };
