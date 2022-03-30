@@ -68,6 +68,9 @@ window.onload = function () {
   }
 
   btnDelka.onclick = function () {
+    lvlevo.innerHTML = null;
+    lvpravo.innerHTML = null;
+    slctDelka.value = 0;
     slctDelka.style.display = "inline";
     slctHmotnost.style.display = "none";
     slctObjem.style.display = "none";
@@ -89,6 +92,9 @@ window.onload = function () {
   };
 
   btnHmotnost.onclick = function () {
+    lvlevo.innerHTML = null;
+    lvpravo.innerHTML = null;
+    slctHmotnost.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "inline";
     slctObjem.style.display = "none";
@@ -110,6 +116,9 @@ window.onload = function () {
   };
 
   btnObjem.onclick = function () {
+    lvlevo.innerHTML = null;
+    lvpravo.innerHTML = null;
+    slctObjem.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
     slctObjem.style.display = " inline";
@@ -131,6 +140,9 @@ window.onload = function () {
   };
 
   btnObsah.onclick = function () {
+    lvlevo.innerHTML = null;
+    lvpravo.innerHTML = null;
+    slctObsah.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
     slctObjem.style.display = "none";
@@ -152,6 +164,9 @@ window.onload = function () {
   };
 
   btnRychlost.onclick = function () {
+    lvlevo.innerHTML = null;
+    lvpravo.innerHTML = null;
+    slctRychlost.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
     slctObjem.style.display = "none";
@@ -173,6 +188,9 @@ window.onload = function () {
   };
 
   btnTeplota.onclick = function () {
+    lvlevo.innerHTML = null;
+    lvpravo.innerHTML = null;
+    slctTeplota.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
     slctObjem.style.display = "none";
@@ -194,6 +212,9 @@ window.onload = function () {
   };
 
   btnMena.onclick = function () {
+    lvlevo.innerHTML = null;
+    lvpravo.innerHTML = null;
+    slctMena.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
     slctObjem.style.display = "none";
