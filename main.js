@@ -27,24 +27,15 @@ window.onload = function () {
   let naparsovanoVlevo;
   let naparsovanoVpravo;
 
-  let requestUrlEur = "https://api.exchangerate.host/latest?symbols=CZK,EUR";
-  let requestEur = new XMLHttpRequest();
-  requestEur.responseType = "json";
-  requestEur.onload = () => {
-    console.log(requestEur.response);
+  const requestURL =
+    "https://api.exchangerate.host/latest?base=CZK&symbols=EUR,USD";
+  let request = new XMLHttpRequest();
+  request.responseType = "json";
+  request.onload = () => {
+    console.log(request.response);
   };
-  requestEur.open("GET", requestUrlEur);
-  requestEur.send();
-
-  let requestUrlUsd =
-    "https://api.exchangerate.host/latest?base=USD&symbols=CZK,USD";
-  let requestUsd = new XMLHttpRequest();
-  requestUsd.responseType = "json";
-  requestUsd.onload = () => {
-    console.log(requestUsd.response);
-  };
-  requestUsd.open("GET", requestUrlUsd);
-  requestUsd.send();
+  request.open("GET", requestURL);
+  request.send();
 
   slctDelka.value = 0;
   slctHmotnost.value = 0;
@@ -1123,14 +1114,14 @@ window.onload = function () {
       if (isNaN(naparsovanoVlevo)) {
         upozorneni.innerHTML = "Nezadali jste číslo!";
       } else {
-        vysledek = naparsovanoVlevo * requestEur.response.rates.CZK;
+        vysledek = naparsovanoVlevo / request.response.rates.EUR;
         vpravo.value = vysledek;
       }
     } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
       if (isNaN(naparsovanoVpravo)) {
         upozorneni.innerHTML = "Nezadali jste číslo!";
       } else {
-        vysledek = naparsovanoVpravo / requestEur.response.rates.CZK;
+        vysledek = naparsovanoVpravo * request.response.rates.EUR;
         vlevo.value = vysledek;
       }
     } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
@@ -1150,14 +1141,14 @@ window.onload = function () {
       if (isNaN(naparsovanoVlevo)) {
         upozorneni.innerHTML = "Nezadali jste číslo!";
       } else {
-        vysledek = naparsovanoVlevo * requestUsd.response.rates.CZK;
+        vysledek = naparsovanoVlevo / request.response.rates.USD;
         vpravo.value = vysledek;
       }
     } else if (naparsovanoVpravo !== null && naparsovanoVlevo === null) {
       if (isNaN(naparsovanoVpravo)) {
         upozorneni.innerHTML = "Nezadali jste číslo!";
       } else {
-        vysledek = naparsovanoVpravo / requestUsd.response.rates.CZK;
+        vysledek = naparsovanoVpravo * request.response.rates.USD;
         vlevo.value = vysledek;
       }
     } else if (naparsovanoVpravo === null && naparsovanoVlevo === null) {
