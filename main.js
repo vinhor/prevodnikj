@@ -90,6 +90,8 @@ window.onload = function () {
   btnDelka.onclick = function () {
     lvlevo.innerHTML = null;
     lvpravo.innerHTML = null;
+    vlevo.value = null;
+    vpravo.value = null;
     slctDelka.value = 0;
     slctDelka.style.display = "inline";
     slctHmotnost.style.display = "none";
@@ -114,6 +116,8 @@ window.onload = function () {
   btnHmotnost.onclick = function () {
     lvlevo.innerHTML = null;
     lvpravo.innerHTML = null;
+    vlevo.value = null;
+    vpravo.value = null;
     slctHmotnost.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "inline";
@@ -138,6 +142,8 @@ window.onload = function () {
   btnObjem.onclick = function () {
     lvlevo.innerHTML = null;
     lvpravo.innerHTML = null;
+    vlevo.value = null;
+    vpravo.value = null;
     slctObjem.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
@@ -162,6 +168,8 @@ window.onload = function () {
   btnObsah.onclick = function () {
     lvlevo.innerHTML = null;
     lvpravo.innerHTML = null;
+    vlevo.value = null;
+    vpravo.value = null;
     slctObsah.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
@@ -186,6 +194,8 @@ window.onload = function () {
   btnRychlost.onclick = function () {
     lvlevo.innerHTML = null;
     lvpravo.innerHTML = null;
+    vlevo.value = null;
+    vpravo.value = null;
     slctRychlost.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
@@ -210,6 +220,8 @@ window.onload = function () {
   btnTeplota.onclick = function () {
     lvlevo.innerHTML = null;
     lvpravo.innerHTML = null;
+    vlevo.value = null;
+    vpravo.value = null;
     slctTeplota.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
@@ -234,6 +246,8 @@ window.onload = function () {
   btnMena.onclick = function () {
     lvlevo.innerHTML = null;
     lvpravo.innerHTML = null;
+    vlevo.value = null;
+    vpravo.value = null;
     slctMena.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
@@ -256,6 +270,8 @@ window.onload = function () {
   };
 
   slctDelka.onchange = function () {
+    vlevo.value = null;
+    vpravo.value = null;
     if (slctDelka.value == 0) {
       lvlevo.innerHTML = "";
       lvpravo.innerHTML = "";
@@ -284,8 +300,8 @@ window.onload = function () {
   };
 
   slctHmotnost.onchange = function () {
-    vlevo.value = "";
-    vpravo.value = "";
+    vlevo.value = null;
+    vpravo.value = null;
     if (slctHmotnost.value == 0) {
       lvlevo.innerHTML = "";
       lvpravo.innerHTML = "";
@@ -299,6 +315,8 @@ window.onload = function () {
   };
 
   slctObjem.onchange = function () {
+    vlevo.value = null;
+    vpravo.value = null;
     if (slctObjem.value == 0) {
       lvlevo.innerHTML = "";
       lvpravo.innerHTML = "";
@@ -318,6 +336,8 @@ window.onload = function () {
   };
 
   slctObsah.onchange = function () {
+    vlevo.value = null;
+    vpravo.value = null;
     if (slctObsah.value == 0) {
       lvlevo.innerHTML = "";
       lvpravo.innerHTML = "";
@@ -340,6 +360,8 @@ window.onload = function () {
   };
 
   slctRychlost.onchange = function () {
+    vlevo.value = null;
+    vpravo.value = null;
     if (slctRychlost.value == 0) {
       lvlevo.innerHTML = "";
       lvpravo.innerHTML = "";
@@ -359,6 +381,8 @@ window.onload = function () {
   };
 
   slctTeplota.onchange = function () {
+    vlevo.value = null;
+    vpravo.value = null;
     if (slctTeplota.value == 0) {
       lvlevo.innerHTML = "";
       lvpravo.innerHTML = "";
@@ -372,6 +396,8 @@ window.onload = function () {
   };
 
   slctMena.onchange = function () {
+    vlevo.value = null;
+    vpravo.value = null;
     if (slctMena.value == 0) {
       lvlevo.innerHTML = "";
       lvpravo.innerHTML = "";
