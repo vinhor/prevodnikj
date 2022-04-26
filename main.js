@@ -53,7 +53,7 @@ window.onload = function () {
   const kwhp = new Prevod(0.7456999);
 
   const requestURL =
-    "https://api.exchangerate.host/latest?base=CZK&symbols=EUR,USD,GBP,UAH";
+    "https://api.exchangerate.host/latest?base=CZK&symbols=EUR,USD,GBP,UAH,CHF,SEK";
   let request = new XMLHttpRequest();
   request.responseType = "json";
   request.onload = () => {
@@ -62,6 +62,8 @@ window.onload = function () {
     usdkc = new Prevod(request.response.rates.USD);
     gbpkc = new Prevod(request.response.rates.GBP);
     uahkc = new Prevod(request.response.rates.UAH);
+    chfkc = new Prevod(request.response.rates.CHF);
+    sekkc = new Prevod(request.response.rates.SEK);
   };
   request.open("GET", requestURL);
   request.send();
@@ -460,6 +462,12 @@ window.onload = function () {
     } else if (slctMena.value == 4) {
       lvlevo.innerHTML = "₴";
       lvpravo.innerHTML = "Kč";
+    } else if (slctMena.value == 5) {
+      lvlevo.innerHTML = "Fr.";
+      lvpravo.innerHTML = "Kč";
+    } else if (slctMena.value == 6) {
+      lvlevo.innerHTML = "kr";
+      lvpravo.innerHTML = "Kč";
     }
   };
 
@@ -565,6 +573,10 @@ window.onload = function () {
       gbpkc.meny();
     } else if (slctMena.value == 4) {
       uahkc.meny();
+    } else if (slctMena.value == 5) {
+      chfkc.meny();
+    } else if (slctMena.value == 6) {
+      sekkc.meny();
     }
   }
 
