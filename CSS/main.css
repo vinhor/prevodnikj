@@ -41,7 +41,7 @@ h2 {
 }
 
 article {
-  border: 1px solid rgb(39, 39, 39);
+  border: 1px solid rgb(149, 153, 158);
   border-radius: 2rem;
   margin: 3rem;
   padding: 1rem;
@@ -58,7 +58,7 @@ button {
   background: inherit;
   min-width: 6rem;
   color: inherit;
-  border: 1px solid rgb(39, 39, 39);
+  border: 1px solid rgb(149, 153, 158);
   font-size: 1.25rem;
   font-family: inherit;
   border-radius: 2rem;
@@ -67,12 +67,12 @@ button {
 }
 
 a {
-  color: rgb(39, 39, 39);
+  color: rgb(149, 153, 158);
 }
 
 input {
   background: inherit;
-  border: 1px solid rgb(39, 39, 39);
+  border: 1px solid rgb(149, 153, 158);
   border-radius: 2rem;
   font-family: inherit;
   font-size: inherit;
@@ -85,7 +85,7 @@ input {
 }
 
 a img {
-  border: 1px solid rgb(39, 39, 39);
+  border: 1px solid rgb(149, 153, 158);
   border-radius: 2rem;
   margin: 1rem;
   padding: 0.5rem;
@@ -96,8 +96,8 @@ strong h2 {
 }
 
 select {
-  border: 1px solid rgb(39, 39, 39);
-  color: rgb(39, 39, 39);
+  border: 1px solid rgb(149, 153, 158);
+  color: rgb(149, 153, 158);
   background: inherit;
   font-size: 1.25rem;
   font-weight: normal;
@@ -133,7 +133,7 @@ strong {
 /* Speciální */
 
 input:focus {
-  border: 1px solid rgb(39, 39, 39);
+  border: 1px solid rgb(149, 153, 158);
   border-radius: 2rem;
   margin: 1rem auto;
   padding: 0.2rem 1rem;
