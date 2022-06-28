@@ -1,10 +1,18 @@
 /* Hlavní */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@font-face {
+  font-family: "Comfortaa bold";
+  src: url(./Comfortaa-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Comfortaa light";
+  src: url(./Comfortaa-Light.ttf);
+}
 
 body {
   background: #b8b8b8;
-  font-family: "Poppins", Ubuntu, Roboto, sans-serif;
+  font-family: "Comfortaa light", Ubuntu, Roboto, sans-serif;
   color: rgb(29, 29, 29);
   text-align: center;
   max-width: 1000px;
@@ -115,6 +123,11 @@ optgroup {
   font-style: normal;
   font-weight: normal;
   outline: none;
+}
+
+strong {
+  font-weight: normal;
+  font: "Comfortaa bold", Ubuntu, Roboto, sans-serif;
 }
 
 /* Speciální */
