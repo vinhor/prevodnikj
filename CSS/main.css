@@ -71,6 +71,7 @@ a {
 }
 
 input {
+  min-height: 2rem;
   background: inherit;
   border: 1px solid rgb(149, 153, 158);
   border-radius: 2rem;
