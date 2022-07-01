@@ -80,21 +80,16 @@
 }
 
 .five {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.six {
   grid-column: 3;
   grid-row: 2;
 }
 
-.seven {
+.six {
   grid-column: 1;
   grid-row: 3;
 }
 
-.eight {
+.seven {
   grid-column: 3;
   grid-row: 3;
 }
