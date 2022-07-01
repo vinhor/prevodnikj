@@ -121,7 +121,7 @@ window.onload = function () {
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
     btnVykon.className = "eight neaktivni";
-    if (pInput.style.display == "none") {
+    if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
     btnPrevod.onclick = vyberDelka;
@@ -148,7 +148,7 @@ window.onload = function () {
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
     btnVykon.className = "eight neaktivni";
-    if (pInput.style.display == "none") {
+    if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
     btnPrevod.onclick = vyberHmotnost;
@@ -175,7 +175,7 @@ window.onload = function () {
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
     btnVykon.className = "eight neaktivni";
-    if (pInput.style.display == "none") {
+    if ((pInput.style.display = "none")) {
       pInput.style.display = "inline";
     }
     btnPrevod.onclick = vyberObjem;
@@ -202,9 +202,7 @@ window.onload = function () {
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
     btnVykon.className = "eight neaktivni";
-    if (pInput.style.display == "none") {
-      pInput.style.display = "inline";
-    }
+    pInput.style.display = "inline";
     btnPrevod.onclick = vyberObsah;
   };
 
@@ -229,10 +227,8 @@ window.onload = function () {
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
     btnVykon.className = "eight neaktivni";
-    if (pInput.style.display == "none") {
-      pInput.style.display = "inline";
-      btnPrevod.onclick = vyberRychlost;
-    }
+    pInput.style.display = "inline";
+    btnPrevod.onclick = vyberRychlost;
   };
 
   btnTeplota.onclick = function () {
@@ -256,9 +252,7 @@ window.onload = function () {
     btnTeplota.className = "six aktivni";
     btnMena.className = "seven neaktivni";
     btnVykon.className = "eight neaktivni";
-    if (pInput.style.display == "none") {
-      pInput.style.display = "inline";
-    }
+    pInput.style.display = "inline";
     btnPrevod.onclick = vyberTeplota;
   };
 
@@ -283,9 +277,7 @@ window.onload = function () {
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven aktivni";
     btnVykon.className = "eight neaktivni";
-    if (pInput.style.display == "none") {
-      pInput.style.display = "inline";
-    }
+    pInput.style.display = "inline";
     btnPrevod.onclick = vyberMena;
   };
 
@@ -310,9 +302,7 @@ window.onload = function () {
     btnTeplota.className = "six neaktivni";
     btnMena.className = "seven neaktivni";
     btnVykon.className = "eight aktivni";
-    if (pInput.style.display == "none") {
-      pInput.style.display = "inline";
-    }
+    pInput.style.display = "inline";
     lvlevo.innerHTML = "kW";
     lvpravo.innerHTML = "HP";
     btnPrevod.onclick = vyberVykon;
