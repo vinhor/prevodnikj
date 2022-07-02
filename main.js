@@ -223,7 +223,6 @@ window.onload = function () {
     lvpravo.innerHTML = null;
     vlevo.value = null;
     vpravo.value = null;
-    slctMena.value = 0;
     slctDelka.style.display = "none";
     slctHmotnost.style.display = "none";
     slctObjem.style.display = "none";
