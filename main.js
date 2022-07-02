@@ -23,6 +23,7 @@ window.onload = function () {
   let br6 = document.createElement("br");
   let lvlevo = document.getElementById("lvlevo");
   let lvpravo = document.getElementById("lvpravo");
+  let pInput = document.getElementById("pInput");
 
   const incm = new Prevod(2.54);
   const ftm = new Prevod(0.3048);
@@ -99,7 +100,7 @@ window.onload = function () {
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
     btnVykon.className = "seven neaktivni";
-      pInput.style.display = "inline";
+    pInput.style.display = "inline";
     btnPrevod.onclick = vyberDelka;
   };
 
@@ -123,7 +124,7 @@ window.onload = function () {
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
     btnVykon.className = "seven neaktivni";
-      pInput.style.display = "inline";
+    pInput.style.display = "inline";
     btnPrevod.onclick = vyberHmotnost;
   };
 
@@ -147,7 +148,7 @@ window.onload = function () {
     btnRychlost.className = "five neaktivni";
     btnTeplota.className = "six neaktivni";
     btnVykon.className = "seven neaktivni";
-      pInput.style.display = "inline";
+    pInput.style.display = "inline";
     btnPrevod.onclick = vyberObjem;
   };
 
