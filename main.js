@@ -212,7 +212,6 @@ window.onload = function () {
     slctObsah.style.display = "none";
     slctRychlost.style.display = "none";
     slctTeplota.style.display = "inline";
-    slctMena.style.display = "none";
     btnDelka.className = "one neaktivni";
     btnHmotnost.className = "two neaktivni";
     btnObjem.className = "three neaktivni";
