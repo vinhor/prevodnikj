@@ -48,7 +48,7 @@ window.onload = function () {
   const knkmh = new Prevod(1.852001);
   const makmh = new Prevod(1225.044);
   const teplota = new Teplota();
-  const kwhp = new Prevod(0.7456999);
+  const kwhp = new Prevod(1.3596216173);
 
   slctDelka.value = 0;
   slctHmotnost.value = 0;
