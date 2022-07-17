@@ -68,6 +68,46 @@ window.onload = function () {
     vlevo.value = null;
   };
 
+  vlevo.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      if (btnDelka.className == "one aktivni") {
+        vyberDelka();
+      } else if (btnHmotnost.className == "two aktivni") {
+        vyberHmotnost();
+      } else if (btnObjem.className == "three aktivni") {
+        vyberObjem();
+      } else if (btnObsah.className == "four aktivni") {
+        vyberObsah();
+      } else if (btnRychlost.className == "five aktivni") {
+        vyberRychlost();
+      } else if (btnTeplota.className == "six aktivni") {
+        vyberTeplota();
+      } else if (btnVykon.className == "seven aktivni") {
+        vyberVykon();
+      }
+    }
+  });
+
+  vpravo.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      if (btnDelka.className == "one aktivni") {
+        vyberDelka();
+      } else if (btnHmotnost.className == "two aktivni") {
+        vyberHmotnost();
+      } else if (btnObjem.className == "three aktivni") {
+        vyberObjem();
+      } else if (btnObsah.className == "four aktivni") {
+        vyberObsah();
+      } else if (btnRychlost.className == "five aktivni") {
+        vyberRychlost();
+      } else if (btnTeplota.className == "six aktivni") {
+        vyberTeplota();
+      } else if (btnVykon.className == "seven aktivni") {
+        vyberVykon();
+      }
+    }
+  });
+
   if (window.innerWidth < 475) {
     divt.className = "malatlacitka";
     divt.insertBefore(br, btnTeplota);
