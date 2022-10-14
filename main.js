@@ -1,3 +1,23 @@
+/* ++ = pro přidání nového převodu napište x
+XX = jednotka
+POZx = poznámka
+xxyy = kód převodu (např.: incm)
+-- = zde tyto úpravy končí (pokud není ohraničeno složenou závorkou, ve které je komentář umístěn)
+if- = pokud je splněna věc v -//něco#
+"}" = něco, co již bylo napsané
+ZTML x= něco z html, x je číslo odkazu do souboru HTML
+a.b = poměr mezi jednotkami
+příklad: 
+ // ++ xxyy = new Prevod(a.b);
+ // kód
+ // --
+ ale:
+  if (some) {
+    // ++ xxyy = new Prevod(c.d);
+    // kód
+  }
+  a.b = poměr mezi jednotkami
+ */
 window.onload = function () {
   let slctDelka = document.getElementById("slctDelka");
   let slctHmotnost = document.getElementById("slctHmotnost");
@@ -25,6 +45,8 @@ window.onload = function () {
   let lvpravo = document.getElementById("lvpravo");
   let pInput = document.getElementById("pInput");
 
+  // ++ xxyy = new Prevod(a.b);
+
   const incm = new Prevod(2.54);
   const ftm = new Prevod(0.3048);
   const ydm = new Prevod(0.9144);
@@ -38,6 +60,8 @@ window.onload = function () {
   const ukgall = new Prevod(4.54609);
   const usaptl = new Prevod(0.4731765);
   const ukptl = new Prevod(0.5682612);
+  const usflozml = new Prevod(29.5735296);
+  const ukflozml = new Prevod(28.4130742);
   const acreha = new Prevod(0.404686);
   const sqinsqcm = new Prevod(6.4516);
   const sqftsqdm = new Prevod(9.290304);
@@ -281,6 +305,12 @@ window.onload = function () {
     lvpravo.innerHTML = "HP";
     btnPrevod.onclick = vyberVykon;
   };
+  /* POZ1 = vyber správný slct, podle veličiny
+      ++ "}" else if(slct.valueOD1 == ZTML 1) {
+      lvlevo.innerHTML = "ZTML 2"
+      lvpravo.innerHTML = "ZTML 3"
+    }
+    */
 
   slctDelka.onchange = function () {
     vlevo.value = null;
@@ -345,6 +375,12 @@ window.onload = function () {
     } else if (slctObjem.value == 4) {
       lvlevo.innerHTML = "UK pt";
       lvpravo.innerHTML = "l";
+    } else if (slctObjem.value == 5) {
+      lvlevo.innerHTML = "USA fl.oz";
+      lvpravo.innerHTML = "ml";
+    } else if (slctObjem.value == 6) {
+      lvlevo.innerHTML = "UK fl.oz";
+      lvpravo.innerHTML = "ml";
     }
   };
 
@@ -408,6 +444,12 @@ window.onload = function () {
     }
   };
 
+  /* POZ2 = vyber správný function 
+  "}" else if (slctPOZ2.value == ZTML 1) {
+    xxyy.prevod();
+  }  
+  */
+
   function vyberDelka() {
     upozorneni.innerHTML = "";
     if (slctDelka.value == 0) {
@@ -452,6 +494,10 @@ window.onload = function () {
       usaptl.prevod();
     } else if (slctObjem.value == 4) {
       ukptl.prevod();
+    } else if (slctObjem.value == 5) {
+      usflozml.prevod();
+    } else if (slctObjem.value == 6) {
+      ukflozml.prevod();
     }
   }
 
