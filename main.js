@@ -60,6 +60,7 @@ window.onload = function () {
   const ukgall = new Prevod(4.54609);
   const usaptl = new Prevod(0.4731765);
   const ukptl = new Prevod(0.5682612);
+  const usflozml = new Prevod(29.5735296);
   const acreha = new Prevod(0.404686);
   const sqinsqcm = new Prevod(6.4516);
   const sqftsqdm = new Prevod(9.290304);
@@ -373,6 +374,9 @@ window.onload = function () {
     } else if (slctObjem.value == 4) {
       lvlevo.innerHTML = "UK pt";
       lvpravo.innerHTML = "l";
+    } else if (slctObjem.value == 5) {
+      lvlevo.innerHTML = "USA fl.oz";
+      lvpravo.innerHTML = "ml";
     }
   };
 
@@ -486,6 +490,8 @@ window.onload = function () {
       usaptl.prevod();
     } else if (slctObjem.value == 4) {
       ukptl.prevod();
+    } else if (slctObjem.value == 5) {
+      usflozml.prevod();
     }
   }
 
