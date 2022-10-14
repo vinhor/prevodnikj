@@ -1,3 +1,23 @@
+/* ++ = pro přidání nového převodu napište x
+XX = jednotka
+POZx = poznámka
+xxyy = kód převodu (např.: incm)
+-- = zde tyto úpravy končí (pokud není ohraničeno složenou závorkou, ve které je komentář umístěn)
+if- = pokud je splněna věc v -//něco#
+"}" = něco, co již bylo napsané
+ZTML x= něco z html, x je číslo odkazu do souboru HTML
+a.b = poměr mezi jednotkami
+příklad: 
+ // ++ xxyy = new Prevod(a.b);
+ // kód
+ // --
+ ale:
+  if (some) {
+    // ++ xxyy = new Prevod(c.d);
+    // kód
+  }
+  a.b = poměr mezi jednotkami
+ */
 window.onload = function () {
   let slctDelka = document.getElementById("slctDelka");
   let slctHmotnost = document.getElementById("slctHmotnost");
@@ -24,6 +44,8 @@ window.onload = function () {
   let lvlevo = document.getElementById("lvlevo");
   let lvpravo = document.getElementById("lvpravo");
   let pInput = document.getElementById("pInput");
+
+  // ++ xxyy = new Prevod(a.b);
 
   const incm = new Prevod(2.54);
   const ftm = new Prevod(0.3048);
@@ -281,6 +303,12 @@ window.onload = function () {
     lvpravo.innerHTML = "HP";
     btnPrevod.onclick = vyberVykon;
   };
+  /* POZ1 = vyber správný slct, podle veličiny
+      ++ "}" else if(slct.valueOD1 == ZTML 1) {
+      lvlevo.innerHTML = "ZTML 2"
+      lvpravo.innerHTML = "ZTML 3"
+    }
+    */
 
   slctDelka.onchange = function () {
     vlevo.value = null;
@@ -407,6 +435,12 @@ window.onload = function () {
       lvpravo.innerHTML = "°C";
     }
   };
+
+  /* POZ2 = vyber správný function 
+  "}" else if (slctPOZ2.value == ZTML 1) {
+    xxyy.prevod();
+  }  
+  */
 
   function vyberDelka() {
     upozorneni.innerHTML = "";
