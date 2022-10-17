@@ -1,61 +1,42 @@
 /* Klasické */
 
-.velky-ramecek {
-  border: 2px solid rgb(149, 153, 158);
-}
-
 .chyba {
   font-size: 5rem;
-  color: rgb(201, 51, 51);
+  margin-bottom: 2rem;
+  color: rgb(190, 42, 42);
 }
 
-.cervena {
-  color: rgb(201, 51, 51);
+.velky-ramecek {
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .velka {
   font-size: 2rem;
 }
 
-.cerveny-article {
-  border: 1px solid rgb(201, 51, 51);
-  color: rgb(201, 51, 51);
-}
-
-.cerveny-article a img {
-  border: 1px solid rgb(201, 51, 51);
+.cervena {
+  color: rgb(190, 42, 42);
 }
 
 .cerveny-article a:hover img,
 .cerveny-article a:active img {
-  border: 1px solid #0f98ba;
+  border: 1px solid #3a82a3;
 }
 
 .tlacitka {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .malatlacitka {
   display: initial;
 }
 
-.cerveny-article {
-  border: 1px solid rgb(201, 51, 51);
-  color: rgb(201, 51, 51);
-}
-
-.cerveny-article a img {
-  border: 1px solid rgb(201, 51, 51);
-  border-radius: 2rem;
-  margin: 1rem;
-  padding: 0.5rem;
-}
-
-.cerveny-article a:hover img,
-.cerveny-article a:active img {
-  border: 1px solid #0f98ba;
+.hlavicka-odkazy {
+  text-decoration: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  font-size: 2rem;
 }
 
 /* Tlačítka */
@@ -67,7 +48,7 @@
 
 .two {
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 2;
 }
 .three {
   grid-column: 3;
@@ -94,24 +75,46 @@
   grid-row: 3;
 }
 
+.menu {
+  display: flex;
+  list-style-type: none;
+}
+
+.malemenu {
+  display: list-item;
+  list-style-type: none;
+}
+h1.malemenu {
+  margin-right: 0;
+}
+
 /* Speciální */
 
 button.neaktivni:hover,
 button.neaktivni:active {
-  border-color: #0f98ba;
+  border-color: #3a82a3;
   cursor: pointer;
-  color: #0f98ba;
+  color: #3a82a3;
 }
 
 button.aktivni {
-  border-color: rgba(149, 153, 158, 0.35);
-  color: rgba(149, 153, 158, 0.35);
-  background-color: #0b0e31;
+  border-color: #3a82a3;
+  color: #3a82a3;
+  background-color: #eefcd3;
   cursor: not-allowed;
+}
+
+.hlavicka-odkazy:hover,
+.hlavicka-odkazy:active {
+  border-bottom-color: #3a82a3;
 }
 
 /* IDs */
 
 #pInput {
   display: none;
+}
+
+#h1 {
+  text-transform: none;
 }
