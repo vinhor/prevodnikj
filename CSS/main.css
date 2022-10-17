@@ -1,5 +1,10 @@
 /* Hlavní */
 
+:root {
+  --text: #000000;
+  --hover: #3a82a3;
+}
+
 @font-face {
   font-family: "Comfortaa bold";
   src: url(./Comfortaa-Bold.ttf);
@@ -10,10 +15,24 @@
   src: url(./Comfortaa-Light.ttf);
 }
 
+h1 {
+  font-size: 2.5rem;
+  font-weight: normal;
+  margin: 0 2rem 0 0;
+}
+
+body > header {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
 body {
   font-family: "Comfortaa light", Ubuntu, Roboto, sans-serif;
-  background: #0b0e31;
-  color: rgb(149, 153, 158);
+  background: #eefcd3;
+  color: var(--text);
   text-align: center;
   max-width: 1000px;
   margin: 1rem auto;
@@ -28,20 +47,15 @@ ul {
 p,
 li {
   font-size: 1.5rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: normal;
+  margin: 0.5rem;
 }
 
 h2 {
   font-size: 2rem;
   font-weight: normal;
 }
-
 article {
-  border: 1px solid rgb(149, 153, 158);
+  border: 1px solid var(--text);
   border-radius: 2rem;
   margin: 3rem;
   padding: 1rem;
@@ -49,16 +63,16 @@ article {
 
 button:hover,
 button:active {
-  border-color: #0f98ba;
+  border-color: var(--hover);
   cursor: pointer;
-  color: #0f98ba;
+  color: var(--hover);
 }
 
 button {
   background: inherit;
   min-width: 6rem;
   color: inherit;
-  border: 1px solid rgb(149, 153, 158);
+  border: 1px solid var(--text);
   font-size: 1.25rem;
   font-family: inherit;
   border-radius: 2rem;
@@ -67,13 +81,12 @@ button {
 }
 
 a {
-  color: rgb(149, 153, 158);
+  color: var(--text);
 }
 
 input {
-  min-height: 2rem;
   background: inherit;
-  border: 1px solid rgb(149, 153, 158);
+  border: 1px solid var(--text);
   border-radius: 2rem;
   font-family: inherit;
   font-size: inherit;
@@ -86,7 +99,7 @@ input {
 }
 
 a img {
-  border: 1px solid rgb(149, 153, 158);
+  border: 1px solid var(--text);
   border-radius: 2rem;
   margin: 1rem;
   padding: 0.5rem;
@@ -97,8 +110,8 @@ strong h2 {
 }
 
 select {
-  border: 1px solid rgb(149, 153, 158);
-  color: rgb(149, 153, 158);
+  border: 1px solid var(--text);
+  color: var(--text);
   background: inherit;
   font-size: 1.25rem;
   font-weight: normal;
@@ -113,16 +126,7 @@ select {
 }
 
 option {
-  color: #0b0e31;
   font-family: inherit;
-  outline: none;
-}
-
-optgroup {
-  color: #0b0e31;
-  font-family: inherit;
-  font-style: normal;
-  font-weight: normal;
   outline: none;
 }
 
@@ -131,10 +135,10 @@ strong {
   font: "Comfortaa bold", Ubuntu, Roboto, sans-serif;
 }
 
-/* Speciální */
+/*  Speciální  */
 
 input:focus {
-  border: 1px solid rgb(149, 153, 158);
+  border: 1px solid var(--text);
   border-radius: 2rem;
   margin: 1rem auto;
   padding: 0.2rem 1rem;
@@ -143,10 +147,10 @@ input:focus {
 
 a:hover img,
 a:active img {
-  border: 1px solid #0f98ba;
+  border: 1px solid var(--hover);
 }
 
 a:hover,
 a:active {
-  color: #0f98ba;
+  color: var(--hover);
 }
