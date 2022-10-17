@@ -44,6 +44,8 @@ window.onload = function () {
   let lvlevo = document.getElementById("lvlevo");
   let lvpravo = document.getElementById("lvpravo");
   let pInput = document.getElementById("pInput");
+  let menu = document.getElementById("menu");
+  let h1 = document.getElementById("h1");
 
   // ++ xxyy = new Prevod(a.b);
 
@@ -142,6 +144,13 @@ window.onload = function () {
     divt.insertBefore(br6, btnVykon);
   } else {
     divt.className = "tlacitka";
+  }
+
+  if (window.innerWidth < 1060) {
+    menu.className = "malemenu";
+    h1.className = "malemenu";
+  } else {
+    menu.className = "menu";
   }
 
   btnDelka.onclick = function () {
